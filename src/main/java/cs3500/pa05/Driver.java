@@ -18,15 +18,15 @@ public class Driver extends Application {
    */
   @Override
   public void start(Stage stage) {
-    JournalView JournalView  = new JournalView();
-    JournalController JournalController = new JournalController(JournalView);
-
+    JournalController JournalController = new JournalController();
+    JournalView JournalView  = new JournalView(JournalController);
 
 
     try {
       // load and place the view's scene onto the stage
-      Scene scene = JournalController.loadScene();
+      Scene scene = JournalView.load();
       stage.setScene(scene);
+      JournalController.loadBujo();
       // render the stage
       stage.show();
     } catch (IllegalStateException exc) {
