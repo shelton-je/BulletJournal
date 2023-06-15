@@ -1,43 +1,53 @@
 package cs3500.pa05.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.LocalTime;
 
 public class ScheduleEvent implements ScheduleItem{
 
-  private final LocalTime startTime;
+  private final String name;
+  private final String description;
+  private final DaysOfWeek day;
+  private final int startTime;
+  private final int duration;
 
-  private final Duration duration;
-
-  public ScheduleEvent(LocalTime startTime, Duration duration) {
+  @JsonCreator
+  public ScheduleEvent(@JsonProperty("name") String name,
+                       @JsonProperty("description") String description,
+                       @JsonProperty("day") DaysOfWeek day,
+                       @JsonProperty("start") int startTime,
+                       @JsonProperty("duration") int duration) {
+    this.name = name;
+    this.description = description;
+    this.day = day;
     this.startTime = startTime;
     this.duration = duration;
   }
 
-  public LocalTime getStartTime() {
+  public int getStartTime() {
     return this.startTime;
   }
 
-  public Duration getDuration() {
+  public int getDuration() {
     return this.duration;
   }
-  @Override
-  public String name() {
-    return null;
+
+  public DaysOfWeek getDay() {
+    return day;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public String getName() {
+    return name;
   }
 
   @Override
-  public String description() {
-    return null;
-  }
-
-  @Override
-  public DaysOfWeek day() {
-    return null;
-  }
-
-  @Override
-  public String category() {
+  public String getInfo() {
     return null;
   }
 }
