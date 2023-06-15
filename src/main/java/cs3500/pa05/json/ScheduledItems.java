@@ -9,4 +9,12 @@ public record ScheduledItems(
     @JsonProperty("events")List<ScheduleEvent> events,
     @JsonProperty("tasks") List<ScheduleTask> tasks
     ) {
+
+    public List<ScheduleEvent> getEvents() {
+        return events;
+    }
+
+    public List<ScheduleTask> getTasks() {
+        return tasks;
+    }
 }
