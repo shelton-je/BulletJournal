@@ -2,8 +2,6 @@ package cs3500.pa05.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.Duration;
-import java.time.LocalTime;
 
 public class ScheduleEvent implements ScheduleItem{
 
