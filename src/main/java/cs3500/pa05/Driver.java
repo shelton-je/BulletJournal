@@ -2,7 +2,13 @@ package cs3500.pa05;
 
 
 import cs3500.pa05.controller.JournalController;
+import cs3500.pa05.model.Day;
+import cs3500.pa05.model.DayOfWeek;
+import cs3500.pa05.model.ScheduleEvent;
+import cs3500.pa05.model.ScheduleTask;
 import cs3500.pa05.view.JournalView;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -26,7 +32,7 @@ public class Driver extends Application {
       // load and place the view's scene onto the stage
       Scene scene = JournalView.load();
       stage.setScene(scene);
-      JournalController.loadBujo();
+      JournalController.run();
       // render the stage
       stage.show();
     } catch (IllegalStateException exc) {
@@ -39,6 +45,6 @@ public class Driver extends Application {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    launch();
+   launch();
   }
 }

@@ -3,23 +3,20 @@ package cs3500.pa05.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ScheduleEvent implements ScheduleItem{
+public class ScheduleEvent {
 
   private final String name;
   private final String description;
-  private final DaysOfWeek day;
   private final int startTime;
   private final int duration;
 
   @JsonCreator
   public ScheduleEvent(@JsonProperty("name") String name,
                        @JsonProperty("description") String description,
-                       @JsonProperty("day") DaysOfWeek day,
                        @JsonProperty("start") int startTime,
                        @JsonProperty("duration") int duration) {
     this.name = name;
     this.description = description;
-    this.day = day;
     this.startTime = startTime;
     this.duration = duration;
   }
@@ -32,10 +29,6 @@ public class ScheduleEvent implements ScheduleItem{
     return this.duration;
   }
 
-  public DaysOfWeek getDay() {
-    return this.day;
-  }
-
   public String getDescription() {
     return this.description;
   }
@@ -44,8 +37,4 @@ public class ScheduleEvent implements ScheduleItem{
     return this.name;
   }
 
-  @Override
-  public String getInfo() {
-    return null;
-  }
 }
