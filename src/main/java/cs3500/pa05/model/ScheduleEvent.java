@@ -35,15 +35,15 @@ public class ScheduleEvent implements ScheduleItem{
   }
 
   public DaysOfWeek getDay() {
-    return day;
+    return this.day;
   }
 
   public String getDescription() {
-    return description;
+    return this.description;
   }
 
   public String getName() {
-    return name;
+    return this.name;
   }
 
   @Override
