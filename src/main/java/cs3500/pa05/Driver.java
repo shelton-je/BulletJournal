@@ -2,13 +2,7 @@ package cs3500.pa05;
 
 
 import cs3500.pa05.controller.JournalController;
-import cs3500.pa05.model.Day;
-import cs3500.pa05.model.DayOfWeek;
-import cs3500.pa05.model.ScheduleEvent;
-import cs3500.pa05.model.ScheduleTask;
 import cs3500.pa05.view.JournalView;
-import java.util.ArrayList;
-import java.util.List;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
