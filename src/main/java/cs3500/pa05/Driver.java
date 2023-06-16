@@ -32,7 +32,6 @@ public class Driver extends Application {
       // load and place the view's scene onto the stage
       Scene scene = JournalView.load();
       stage.setScene(scene);
-      JournalController.run();
       // render the stage
       stage.show();
     } catch (IllegalStateException exc) {
