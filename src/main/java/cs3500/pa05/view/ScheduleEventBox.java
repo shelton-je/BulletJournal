@@ -5,6 +5,10 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
+/**
+ * This class represents a visual box for a scheduled event in a JavaFX application.
+ * It consists of four labels: name, description, start time, and duration of the event.
+ */
 public class ScheduleEventBox extends VBox {
   Label event = new Label("EVENT");
   Label name;
@@ -12,6 +16,14 @@ public class ScheduleEventBox extends VBox {
   Label start;
   Label duration;
 
+  /**
+   * Constructs a ScheduleEventBox object and initializes it with the provided event details.
+   *
+   * @param name        the name of the scheduled event
+   * @param description the description of the scheduled event
+   * @param start       the start time of the scheduled event
+   * @param duration    the duration of the scheduled event
+   */
   public ScheduleEventBox(String name, String description, String start, String duration) {
     this.name = new Label(name);
     this.description = new Label(description);

@@ -6,6 +6,8 @@ import cs3500.pa05.model.ScheduleEvent;
 import cs3500.pa05.model.ScheduleTask;
 import cs3500.pa05.model.Week;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -24,8 +26,8 @@ public class WeekTest {
   @BeforeEach
   void setUp() {
     // Initialize some ScheduleEvent and ScheduleTask objects for use in tests
-    ScheduleEvent event1 = new ScheduleEvent("Event 1", "Description 1", 10, 30);
-    ScheduleEvent event2 = new ScheduleEvent("Event 2", "Description 2", 11, 30);
+    ScheduleEvent event1 = new ScheduleEvent("Event 1", "Description 1", "1000", "0130");
+    ScheduleEvent event2 = new ScheduleEvent("Event 2", "Description 2", "1130", "0130");
 
     ArrayList<ScheduleEvent> events = new ArrayList<>();
     events.add(event1);
@@ -42,12 +44,13 @@ public class WeekTest {
     day1 = new Day(DayOfWeek.MONDAY, events, tasks);
     day2 = new Day(DayOfWeek.TUESDAY, events, tasks);
 
-    ArrayList<Day> days = new ArrayList<>();
-    days.add(day1);
-    days.add(day2);
+    Map<DayOfWeek, Day> days = new HashMap<>();
+    days.put(DayOfWeek.MONDAY, day1);
+    days.put(DayOfWeek.TUESDAY, day2);
 
     week = new Week("Test Week", 5, 5, days);
   }
+
 
   @Test
   void testGetName() {
@@ -66,9 +69,9 @@ public class WeekTest {
 
   @Test
   void testGetDays() {
-    ArrayList<Day> days = week.getDays();
+    Map<DayOfWeek, Day> days = week.getDays();
     assertEquals(2, days.size());
-    assertTrue(days.contains(day1));
-    assertTrue(days.contains(day2));
+    assertTrue(days.containsValue(day1));
+    assertTrue(days.containsValue(day2));
   }
 }

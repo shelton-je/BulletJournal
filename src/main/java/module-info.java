@@ -1,4 +1,7 @@
-module cs3500.pa05 {
+/**
+ *
+ */
+module cs.pa {
   requires javafx.controls;
   requires javafx.fxml;
 

@@ -5,12 +5,23 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
+/**
+ * This class represents a visual box for a scheduled task in a JavaFX application.
+ * It consists of a label for task name and description, and a checkbox to indicate
+ * whether the task is complete.
+ */
 public class ScheduleTaskBox extends VBox {
   Label task = new Label("TASK");
   Label name;
   Label description;
   CheckBox complete;
 
+  /**
+   * Constructs a ScheduleTaskBox object and initializes it with the provided task details.
+   *
+   * @param name        the name of the scheduled task
+   * @param description the description of the scheduled task
+   */
   public ScheduleTaskBox(String name, String description){
     this.name = new Label(name);
     this.description = new Label(description);

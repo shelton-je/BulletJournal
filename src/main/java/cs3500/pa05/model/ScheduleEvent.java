@@ -21,6 +21,7 @@ public class ScheduleEvent {
     this.duration = duration;
   }
 
+
   public String getDescription() {
     return this.description;
   }

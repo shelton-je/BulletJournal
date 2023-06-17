@@ -25,8 +25,8 @@ public class DayTest {
   @BeforeEach
   void setUp() {
     // Initialize some ScheduleEvent and ScheduleTask objects for use in tests
-    event1 = new ScheduleEvent("Event 1", "Description 1", 10, 30);
-    event2 = new ScheduleEvent("Event 2", "Description 2", 11, 30);
+    event1 = new ScheduleEvent("Event 1", "Description 1", "1000", "0130");
+    event2 = new ScheduleEvent("Event 2", "Description 2", "1130", "0130");
 
     ArrayList<ScheduleEvent> events = new ArrayList<>();
     events.add(event1);
@@ -42,6 +42,7 @@ public class DayTest {
     // Initialize the Day object for use in tests
     day = new Day(DayOfWeek.MONDAY, events, tasks);
   }
+
 
   @Test
   void testGetDay() {

@@ -7,6 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Represents a week in a scheduling context. The Week class contains a name, the maximum number
+ * of events and tasks that can be assigned, and a map of days each with their assigned tasks and
+ * events. It is equipped to handle adding tasks and events to specific days.
+ */
 public class Week {
   private String name;
   private int maxEvent;
@@ -14,6 +19,14 @@ public class Week {
   private Map<DayOfWeek, Day> days;
 
 
+  /**
+   * Constructs a new instance of Week with the provided parameters.
+   *
+   * @param name     the name of the week
+   * @param maxEvent the maximum number of events that can be assigned in this week
+   * @param maxTask  the maximum number of tasks that can be assigned in this week
+   * @param days     a map of the days of the week and their corresponding Day objects
+   */
   @JsonCreator
   public Week(@JsonProperty("name") String name, @JsonProperty("max-events") int maxEvent,
               @JsonProperty("max-tasks") int maxTask,
@@ -24,6 +37,11 @@ public class Week {
     this.days = days;
   }
 
+  /**
+   * Constructs a default instance of Week, with the name as an empty string, maximum tasks and events
+   * set to 5, and days as a populated map with the seven days of the week each associated with a new Day
+   * instance with empty tasks and events.
+   */
   public Week() {
     this.name = "";
     this.maxEvent = 5;
@@ -39,26 +57,58 @@ public class Week {
     days.put(DayOfWeek.SATURDAY, new Day(DayOfWeek.SATURDAY, new ArrayList<>(), new ArrayList<>()));
   }
 
+  /**
+   * Retrieves the name of the week.
+   *
+   * @return the name of the week
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * Retrieves the maximum number of events that can be assigned in the week.
+   *
+   * @return the maximum number of events
+   */
   public int getMaxEvent() {
     return maxEvent;
   }
 
+  /**
+   * Retrieves the maximum number of tasks that can be assigned in the week.
+   *
+   * @return the maximum number of tasks
+   */
   public int getMaxTask() {
     return maxTask;
   }
 
+  /**
+   * Retrieves a map of the days of the week with their corresponding Day objects.
+   *
+   * @return the map of days
+   */
   public Map<DayOfWeek, Day> getDays() {
     return this.days;
   }
 
+  /**
+   * Adds a task to a specific day in the week.
+   *
+   * @param dayOfWeek the day to add the task to
+   * @param task      the task to be added
+   */
   public void addTask(DayOfWeek dayOfWeek, ScheduleTask task) {
     this.days.get(dayOfWeek).getTasks().add(task);
   }
 
+  /**
+   * Adds an event to a specific day in the week.
+   *
+   * @param dayOfWeek the day to add the event to
+   * @param event     the event to be added
+   */
   public void addEvent(DayOfWeek dayOfWeek, ScheduleEvent event) {
       this.days.get(dayOfWeek).getEvents().add(event);
     }
