@@ -7,26 +7,18 @@ public class ScheduleEvent {
 
   private final String name;
   private final String description;
-  private final int startTime;
-  private final int duration;
+  private final String startTime;
+  private final String duration;
 
   @JsonCreator
   public ScheduleEvent(@JsonProperty("name") String name,
                        @JsonProperty("description") String description,
-                       @JsonProperty("start") int startTime,
-                       @JsonProperty("duration") int duration) {
+                       @JsonProperty("start") String startTime,
+                       @JsonProperty("duration") String duration) {
     this.name = name;
     this.description = description;
     this.startTime = startTime;
     this.duration = duration;
-  }
-
-  public int getStartTime() {
-    return this.startTime;
-  }
-
-  public int getDuration() {
-    return this.duration;
   }
 
   public String getDescription() {
@@ -35,6 +27,14 @@ public class ScheduleEvent {
 
   public String getName() {
     return this.name;
+  }
+
+  public String getStartTime() {
+    return this.startTime;
+  }
+
+  public String getDuration() {
+    return this.duration;
   }
 
 }

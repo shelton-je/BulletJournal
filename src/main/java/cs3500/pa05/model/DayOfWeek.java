@@ -1,5 +1,7 @@
 package cs3500.pa05.model;
 
+import javafx.scene.layout.VBox;
+
 public enum DayOfWeek {
 
   /**
@@ -17,5 +19,5 @@ public enum DayOfWeek {
 
   SATURDAY,
 
-  SUNDAY
+  SUNDAY;
 }

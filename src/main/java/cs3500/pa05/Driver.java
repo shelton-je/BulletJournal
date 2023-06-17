@@ -18,18 +18,20 @@ public class Driver extends Application {
    */
   @Override
   public void start(Stage stage) {
-    JournalController JournalController = new JournalController();
-    JournalView JournalView  = new JournalView(JournalController);
+    JournalController journalController = new JournalController(stage);
+    JournalView journalView  = new JournalView(journalController, "journal.fxml");
 
 
     try {
       // load and place the view's scene onto the stage
-      Scene scene = JournalView.load();
+      Scene scene = journalView.load();
+      journalController.run();
       stage.setScene(scene);
       // render the stage
       stage.show();
     } catch (IllegalStateException exc) {
-      System.err.println("Unable to load GUI.");
+      System.err.println(exc);
+
     }
   }
   /**

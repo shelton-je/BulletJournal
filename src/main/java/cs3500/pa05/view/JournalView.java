@@ -1,5 +1,6 @@
 package cs3500.pa05.view;
 
+import cs3500.pa05.controller.Controller;
 import cs3500.pa05.controller.JournalController;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
@@ -8,9 +9,9 @@ import javafx.scene.Scene;
 public class JournalView {
   FXMLLoader loader;
 
-  public JournalView(JournalController jc) {
+  public JournalView(Controller jc, String fxml) {
     this.loader = new FXMLLoader();
-    this.loader.setLocation(getClass().getClassLoader().getResource("journal.fxml"));
+    this.loader.setLocation(getClass().getClassLoader().getResource(fxml));
 
     this.loader.setController(jc);
   }
@@ -24,7 +25,7 @@ public class JournalView {
     try {
       return this.loader.load();
     } catch (IOException e) {
-      throw new IllegalStateException("cannot load the wack-a-mole gui");
+      throw new IllegalStateException(e);
     }
   }
 }

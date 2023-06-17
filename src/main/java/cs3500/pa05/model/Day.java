@@ -9,8 +9,8 @@ import java.util.List;
 public class Day {
 
 
-  private List<ScheduleEvent> events;
-  private List<ScheduleTask> tasks;
+  private ArrayList<ScheduleEvent> events;
+  private ArrayList<ScheduleTask> tasks;
   private final DayOfWeek day;
 
   @JsonCreator
@@ -30,11 +30,11 @@ public class Day {
   }
 
   public ArrayList<ScheduleEvent> getEvents() {
-    return new ArrayList<>(this.events);
+    return this.events;
   }
 
   public ArrayList<ScheduleTask> getTasks() {
-    return new ArrayList<>(this.tasks);
+    return this.tasks;
   }
 
 }
