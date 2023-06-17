@@ -12,6 +12,9 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ *
+ */
 public class DayTest {
   private Day day;
   private ScheduleEvent event1;

@@ -13,27 +13,26 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ *
+ */
 public class WeekTest {
   private Week week;
   private Day day1;
   private Day day2;
-  private ScheduleEvent event1;
-  private ScheduleEvent event2;
-  private ScheduleTask task1;
-  private ScheduleTask task2;
 
   @BeforeEach
   void setUp() {
     // Initialize some ScheduleEvent and ScheduleTask objects for use in tests
-    event1 = new ScheduleEvent("Event 1", "Description 1", 10, 30);
-    event2 = new ScheduleEvent("Event 2", "Description 2", 11, 30);
+    ScheduleEvent event1 = new ScheduleEvent("Event 1", "Description 1", 10, 30);
+    ScheduleEvent event2 = new ScheduleEvent("Event 2", "Description 2", 11, 30);
 
     ArrayList<ScheduleEvent> events = new ArrayList<>();
     events.add(event1);
     events.add(event2);
 
-    task1 = new ScheduleTask("Task 1", "Task Description 1", false);
-    task2 = new ScheduleTask("Task 2", "Task Description 2", false);
+    ScheduleTask task1 = new ScheduleTask("Task 1", "Task Description 1", false);
+    ScheduleTask task2 = new ScheduleTask("Task 2", "Task Description 2", false);
 
     ArrayList<ScheduleTask> tasks = new ArrayList<>();
     tasks.add(task1);

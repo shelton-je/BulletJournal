@@ -226,12 +226,99 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" visible="false" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" visible="false" wrapText="true" />
+                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
-                                       <Accordion />
-                                       <Accordion prefHeight="170.0" />
+                                       <Accordion>
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" contentDisplay="TOP" minHeight="70.0" prefHeight="230.0" text="Event_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="205.0" minHeight="0.0" minWidth="0.0" prefHeight="205.0">
+                                                      <children>
+                                                         <VBox prefHeight="205.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Start Time:" />
+                                                                     <Label text="Start_Time" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Duration:" />
+                                                                     <Label text="Duration" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
+                                       <Accordion prefHeight="170.0">
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" maxHeight="70.0" minHeight="70.0" prefHeight="100.0" text="Task_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="145.0" minHeight="0.0" minWidth="0.0" prefHeight="145.0">
+                                                      <children>
+                                                         <VBox alignment="TOP_CENTER" prefHeight="145.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="30.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <CheckBox mnemonicParsing="false" text="Complete" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="105.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
                                     </children>
                                  </VBox>
                                  <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
@@ -243,12 +330,99 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" visible="false" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" visible="false" wrapText="true" />
+                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
-                                       <Accordion />
-                                       <Accordion prefHeight="170.0" />
+                                       <Accordion>
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" contentDisplay="TOP" minHeight="70.0" prefHeight="230.0" text="Event_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="205.0" minHeight="0.0" minWidth="0.0" prefHeight="205.0">
+                                                      <children>
+                                                         <VBox prefHeight="205.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Start Time:" />
+                                                                     <Label text="Start_Time" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Duration:" />
+                                                                     <Label text="Duration" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
+                                       <Accordion prefHeight="170.0">
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" maxHeight="70.0" minHeight="70.0" prefHeight="100.0" text="Task_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="145.0" minHeight="0.0" minWidth="0.0" prefHeight="145.0">
+                                                      <children>
+                                                         <VBox alignment="TOP_CENTER" prefHeight="145.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="30.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <CheckBox mnemonicParsing="false" text="Complete" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="105.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
                                     </children>
                                  </VBox>
                                  <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
@@ -260,12 +434,99 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" visible="false" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" visible="false" wrapText="true" />
+                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
-                                       <Accordion />
-                                       <Accordion prefHeight="170.0" />
+                                       <Accordion>
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" contentDisplay="TOP" minHeight="70.0" prefHeight="230.0" text="Event_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="205.0" minHeight="0.0" minWidth="0.0" prefHeight="205.0">
+                                                      <children>
+                                                         <VBox prefHeight="205.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Start Time:" />
+                                                                     <Label text="Start_Time" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Duration:" />
+                                                                     <Label text="Duration" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
+                                       <Accordion prefHeight="170.0">
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" maxHeight="70.0" minHeight="70.0" prefHeight="100.0" text="Task_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="145.0" minHeight="0.0" minWidth="0.0" prefHeight="145.0">
+                                                      <children>
+                                                         <VBox alignment="TOP_CENTER" prefHeight="145.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="30.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <CheckBox mnemonicParsing="false" text="Complete" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="105.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
                                     </children>
                                  </VBox>
                                  <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
@@ -277,12 +538,99 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" visible="false" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" visible="false" wrapText="true" />
+                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
-                                       <Accordion />
-                                       <Accordion prefHeight="170.0" />
+                                       <Accordion>
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" contentDisplay="TOP" minHeight="70.0" prefHeight="230.0" text="Event_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="205.0" minHeight="0.0" minWidth="0.0" prefHeight="205.0">
+                                                      <children>
+                                                         <VBox prefHeight="205.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Start Time:" />
+                                                                     <Label text="Start_Time" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Duration:" />
+                                                                     <Label text="Duration" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
+                                       <Accordion prefHeight="170.0">
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" maxHeight="70.0" minHeight="70.0" prefHeight="100.0" text="Task_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="145.0" minHeight="0.0" minWidth="0.0" prefHeight="145.0">
+                                                      <children>
+                                                         <VBox alignment="TOP_CENTER" prefHeight="145.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="30.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <CheckBox mnemonicParsing="false" text="Complete" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="105.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
                                     </children>
                                  </VBox>
                                  <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
@@ -294,12 +642,99 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" visible="false" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" visible="false" wrapText="true" />
+                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
-                                       <Accordion />
-                                       <Accordion prefHeight="170.0" />
+                                       <Accordion>
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" contentDisplay="TOP" minHeight="70.0" prefHeight="230.0" text="Event_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="205.0" minHeight="0.0" minWidth="0.0" prefHeight="205.0">
+                                                      <children>
+                                                         <VBox prefHeight="205.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Start Time:" />
+                                                                     <Label text="Start_Time" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Duration:" />
+                                                                     <Label text="Duration" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
+                                       <Accordion prefHeight="170.0">
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" maxHeight="70.0" minHeight="70.0" prefHeight="100.0" text="Task_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="145.0" minHeight="0.0" minWidth="0.0" prefHeight="145.0">
+                                                      <children>
+                                                         <VBox alignment="TOP_CENTER" prefHeight="145.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="30.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <CheckBox mnemonicParsing="false" text="Complete" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="105.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
                                     </children>
                                  </VBox>
                                  <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
@@ -311,12 +746,99 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" visible="false" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" visible="false" wrapText="true" />
+                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
-                                       <Accordion />
-                                       <Accordion prefHeight="170.0" />
+                                       <Accordion>
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" contentDisplay="TOP" minHeight="70.0" prefHeight="230.0" text="Event_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="205.0" minHeight="0.0" minWidth="0.0" prefHeight="205.0">
+                                                      <children>
+                                                         <VBox prefHeight="205.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Start Time:" />
+                                                                     <Label text="Start_Time" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Duration:" />
+                                                                     <Label text="Duration" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
+                                       <Accordion prefHeight="170.0">
+                                          <panes>
+                                             <TitledPane alignment="TOP_CENTER" animated="false" maxHeight="70.0" minHeight="70.0" prefHeight="100.0" text="Task_Name">
+                                                <content>
+                                                   <AnchorPane maxHeight="145.0" minHeight="0.0" minWidth="0.0" prefHeight="145.0">
+                                                      <children>
+                                                         <VBox alignment="TOP_CENTER" prefHeight="145.0" prefWidth="105.0">
+                                                            <children>
+                                                               <VBox alignment="CENTER" prefHeight="30.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <CheckBox mnemonicParsing="false" text="Complete" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="CENTER" prefHeight="45.0" prefWidth="105.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <Label text="Category: " />
+                                                                     <Label text="Category_name" />
+                                                                  </children>
+                                                               </VBox>
+                                                               <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="100.0" style="-fx-border-color: Black;">
+                                                                  <children>
+                                                                     <VBox alignment="CENTER" prefHeight="20.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description:" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                     <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0">
+                                                                        <children>
+                                                                           <Label text="Description" textAlignment="CENTER" wrapText="true" />
+                                                                        </children>
+                                                                     </VBox>
+                                                                  </children>
+                                                               </VBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </AnchorPane>
+                                                </content>
+                                             </TitledPane>
+                                          </panes>
+                                       </Accordion>
                                     </children>
                                  </VBox>
                               </children>
