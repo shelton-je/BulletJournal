@@ -2,14 +2,16 @@ package cs3500.pa05.controller;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import cs3500.pa05.json.WeekRecord;
 import cs3500.pa05.model.Day;
 import cs3500.pa05.model.DayOfWeek;
+import cs3500.pa05.model.OutPutFileWriter;
 import cs3500.pa05.model.ReadBujo;
 import cs3500.pa05.model.ScheduleEvent;
 import cs3500.pa05.model.ScheduleTask;
 import cs3500.pa05.model.Week;
+import cs3500.pa05.model.WeekRecord;
 import cs3500.pa05.view.JournalView;
 import cs3500.pa05.view.ScheduleEventBox;
 import cs3500.pa05.view.ScheduleTaskBox;
@@ -32,6 +34,8 @@ public class JournalController implements Controller{
   private TextField filePath;
   @FXML
   private MenuItem openFile;
+  @FXML
+  private MenuItem saveFile;
   @FXML
   private Button sunCreate;
   @FXML
@@ -74,6 +78,7 @@ public class JournalController implements Controller{
 
   public void run() {
     openFile.setOnAction(e -> loadBujo());
+    saveFile.setOnAction(e -> saveBujo());
     sunCreate.setOnAction(e -> switchScene(DayOfWeek.SUNDAY));
     monCreate.setOnAction(e -> switchScene(DayOfWeek.MONDAY));
     tueCreate.setOnAction(e -> switchScene(DayOfWeek.TUESDAY));
@@ -92,21 +97,29 @@ public class JournalController implements Controller{
     stage.setScene(scene);
   }
 
-  private Path getBujoFile() {
-    return null;
-  }
-
   public void loadBujo() {
-    ReadBujo reader = new ReadBujo(Path.of(filePath.toString()));
+    ReadBujo reader = new ReadBujo(Path.of(filePath.getText()));
     ObjectMapper mapper = new ObjectMapper();
+    String jsonString = reader.readBujo();
     WeekRecord weekRecord = null;
     try {
-      weekRecord = mapper.readValue(reader.readBujo(), WeekRecord.class);
+      JsonNode jsonNode = mapper.readTree(jsonString);
+      weekRecord = mapper.convertValue(jsonNode, WeekRecord.class);
     } catch (JsonProcessingException e) {
-      throw new RuntimeException(e);
+
     }
     this.week = weekRecord.getWeek();
     loadWeek();
+  }
+
+  public void saveBujo() {
+    ObjectMapper mapper = new ObjectMapper();
+    WeekRecord weekRecord = new WeekRecord(this.week);
+    try {
+      OutPutFileWriter.writeToFile(filePath.getText(), mapper.writeValueAsString(weekRecord));
+    } catch (JsonProcessingException e) {
+
+    }
   }
 
   private void loadWeek() {

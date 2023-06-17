@@ -17,7 +17,7 @@ public class Day {
   public Day(
       @JsonProperty("day") DayOfWeek day,
       @JsonProperty("events") ArrayList<ScheduleEvent> events,
-      @JsonProperty("taks") ArrayList<ScheduleTask> tasks
+      @JsonProperty("tasks") ArrayList<ScheduleTask> tasks
       ) {
     this.day = day;
     this.events = events;

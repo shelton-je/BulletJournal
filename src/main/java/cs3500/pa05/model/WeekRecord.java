@@ -1,8 +1,6 @@
-package cs3500.pa05.json;
+package cs3500.pa05.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import cs3500.pa05.model.Week;
 
 public record WeekRecord(
     @JsonProperty("week") Week week
@@ -13,3 +11,4 @@ public record WeekRecord(
     return this.week;
   }
 }
+

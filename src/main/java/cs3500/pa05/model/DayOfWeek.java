@@ -1,6 +1,6 @@
 package cs3500.pa05.model;
 
-import javafx.scene.layout.VBox;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum DayOfWeek {
 
@@ -20,4 +20,6 @@ public enum DayOfWeek {
   SATURDAY,
 
   SUNDAY;
+
+
 }

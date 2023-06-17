@@ -1,7 +1,11 @@
 package cs3500.pa05;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import cs3500.pa05.controller.JournalController;
+import cs3500.pa05.model.DayOfWeek;
+import cs3500.pa05.model.Week;
 import cs3500.pa05.view.JournalView;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -18,6 +22,7 @@ public class Driver extends Application {
    */
   @Override
   public void start(Stage stage) {
+
     JournalController journalController = new JournalController(stage);
     JournalView journalView  = new JournalView(journalController, "journal.fxml");
 
