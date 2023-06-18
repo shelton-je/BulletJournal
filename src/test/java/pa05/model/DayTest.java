@@ -25,15 +25,15 @@ public class DayTest {
   @BeforeEach
   void setUp() {
     // Initialize some ScheduleEvent and ScheduleTask objects for use in tests
-    event1 = new ScheduleEvent("Event 1", "Description 1", "1000", "0130");
-    event2 = new ScheduleEvent("Event 2", "Description 2", "1130", "0130");
+    event1 = new ScheduleEvent("Event 1", "Category 1", "Description 1", "1000", "0130");
+    event2 = new ScheduleEvent("Event 2", "Category 2", "Description 2", "1130", "0130");
 
     ArrayList<ScheduleEvent> events = new ArrayList<>();
     events.add(event1);
     events.add(event2);
 
-    task1 = new ScheduleTask("Task 1", "Task Description 1", false);
-    task2 = new ScheduleTask("Task 2", "Task Description 2", false);
+    task1 = new ScheduleTask("Task 1", "Category 1", "Task Description 1", false);
+    task2 = new ScheduleTask("Task 2", "Category 2", "Task Description 2", false);
 
     ArrayList<ScheduleTask> tasks = new ArrayList<>();
     tasks.add(task1);

@@ -26,15 +26,15 @@ public class WeekTest {
   @BeforeEach
   void setUp() {
     // Initialize some ScheduleEvent and ScheduleTask objects for use in tests
-    ScheduleEvent event1 = new ScheduleEvent("Event 1", "Description 1", "1000", "0130");
-    ScheduleEvent event2 = new ScheduleEvent("Event 2", "Description 2", "1130", "0130");
+    ScheduleEvent event1 = new ScheduleEvent("Event 1", "Category 1", "Description 1", "1000", "0130");
+    ScheduleEvent event2 = new ScheduleEvent("Event 2", "Category 2", "Description 2", "1130", "0130");
 
     ArrayList<ScheduleEvent> events = new ArrayList<>();
     events.add(event1);
     events.add(event2);
 
-    ScheduleTask task1 = new ScheduleTask("Task 1", "Task Description 1", false);
-    ScheduleTask task2 = new ScheduleTask("Task 2", "Task Description 2", false);
+    ScheduleTask task1 = new ScheduleTask("Task 1", "Category 1", "Task Description 1", false);
+    ScheduleTask task2 = new ScheduleTask("Task 2", "Category 2", "Task Description 2", false);
 
     ArrayList<ScheduleTask> tasks = new ArrayList<>();
     tasks.add(task1);
@@ -48,7 +48,11 @@ public class WeekTest {
     days.put(DayOfWeek.MONDAY, day1);
     days.put(DayOfWeek.TUESDAY, day2);
 
-    week = new Week("Test Week", 5, 5, days);
+    ArrayList<String> categories = new ArrayList<>();
+    categories.add("Category 1");
+    categories.add("Category 2");
+
+    week = new Week("Test Week", 5, 5, categories, days);
   }
 
 
@@ -73,5 +77,13 @@ public class WeekTest {
     assertEquals(2, days.size());
     assertTrue(days.containsValue(day1));
     assertTrue(days.containsValue(day2));
+  }
+
+  @Test
+  void testGetCategories() {
+    ArrayList<String> categories = week.getCategories();
+    assertEquals(2, categories.size());
+    assertTrue(categories.contains("Category 1"));
+    assertTrue(categories.contains("Category 2"));
   }
 }
