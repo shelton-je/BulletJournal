@@ -7,6 +7,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -80,6 +81,7 @@
                                              </Label>
                                              <Label fx:id="sunEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
                                              <Label fx:id="sunTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <ProgressBar fx:id="sunProgress" prefWidth="200.0" progress="0.0" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="sun" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -97,6 +99,7 @@
                                              </Label>
                                              <Label fx:id="monEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
                                              <Label fx:id="monTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <ProgressBar fx:id="monProgress" prefWidth="200.0" progress="0.0" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="mon" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -114,6 +117,7 @@
                                              </Label>
                                              <Label fx:id="tueEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
                                              <Label fx:id="tueTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <ProgressBar fx:id="tueProgress" prefWidth="200.0" progress="0.0" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="tue" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -131,6 +135,7 @@
                                              </Label>
                                              <Label fx:id="wenEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
                                              <Label fx:id="wenTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <ProgressBar fx:id="wenProgress" prefWidth="200.0" progress="0.0" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="wen" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -148,6 +153,7 @@
                                              </Label>
                                              <Label fx:id="thuEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
                                              <Label fx:id="thuTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <ProgressBar fx:id="thuProgress" prefWidth="200.0" progress="0.0" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="thu" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -165,6 +171,7 @@
                                              </Label>
                                              <Label fx:id="friEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
                                              <Label fx:id="friTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <ProgressBar fx:id="friProgress" prefWidth="200.0" progress="0.0" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="fri" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -182,6 +189,7 @@
                                              </Label>
                                              <Label fx:id="satEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
                                              <Label fx:id="satTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <ProgressBar fx:id="satProgress" prefWidth="200.0" progress="0.0" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="sat" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />

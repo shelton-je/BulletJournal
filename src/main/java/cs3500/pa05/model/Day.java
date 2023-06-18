@@ -61,4 +61,14 @@ public class Day {
     return this.tasks;
   }
 
+  public int numTasksComplete() {
+    int numComplete = 0;
+    for(ScheduleTask task : tasks) {
+      if(task.isComplete()) {
+        numComplete += 1;
+      }
+    }
+    return numComplete;
+  }
+
 }

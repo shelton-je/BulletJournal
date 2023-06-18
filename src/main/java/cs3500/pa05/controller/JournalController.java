@@ -17,6 +17,7 @@ import cs3500.pa05.view.JournalView;
 import cs3500.pa05.view.ScheduleEventBox;
 import cs3500.pa05.view.ScheduleTaskBox;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -24,6 +25,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -98,6 +100,20 @@ public class JournalController implements Controller{
   private Label satTaskWarning;
   @FXML
   private VBox tasksBar;
+  @FXML
+  private ProgressBar sunProgress;
+  @FXML
+  private ProgressBar monProgress;
+  @FXML
+  private ProgressBar tueProgress;
+  @FXML
+  private ProgressBar wenProgress;
+  @FXML
+  private ProgressBar thuProgress;
+  @FXML
+  private ProgressBar friProgress;
+  @FXML
+  private ProgressBar satProgress;
 
 
   public JournalController(Stage stage) {
@@ -240,11 +256,42 @@ public class JournalController implements Controller{
   private void toggleBarComplete(ScheduleTask task, ScheduleTaskBox scheduleTask) {
     task.toggleComplete();
     scheduleTask.toggleComplete();
+    handleProgresses();
   }
 
   private void toggleScheduleComplete(ScheduleTask task, BarTaskBox barTask) {
     task.toggleComplete();
     barTask.toggleComplete();
+    handleProgresses();
   }
 
+  private void handleProgresses() {
+    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+      Day day = entry.getValue();
+
+      double numTasksComplete = day.numTasksComplete();
+      double totalTasks = day.getTasks().size();
+      double progress;
+      if(numTasksComplete == 0) {
+        progress = 0.0;
+      }
+      else {
+        progress = numTasksComplete / totalTasks;
+      }
+      ProgressBar progressBar = chooseProgressBar(entry.getKey());
+      progressBar.setProgress(progress);
+    }
+  }
+
+  private ProgressBar chooseProgressBar(DayOfWeek dayOfWeek) {
+    switch(dayOfWeek) {
+      case SUNDAY -> { return sunProgress; }
+      case MONDAY -> { return monProgress; }
+      case TUESDAY -> { return tueProgress; }
+      case WEDNESDAY -> { return wenProgress; }
+      case THURSDAY -> { return thuProgress; }
+      case FRIDAY -> { return friProgress; }
+      default -> { return satProgress; }
+    }
+  }
 }
