@@ -1,4 +1,4 @@
-package pa05.model;
+package pa05.model.model;
 
 import cs3500.pa05.model.Day;
 import cs3500.pa05.model.DayOfWeek;
@@ -52,8 +52,7 @@ public class WeekTest {
     categories.add("Category 1");
     categories.add("Category 2");
 
-    week = new Week("Test Week", 5, 5, categories, days);
-  }
+    week = new Week("Test Week", 5, 5, categories, days);  }
 
 
   @Test
@@ -85,5 +84,45 @@ public class WeekTest {
     assertEquals(2, categories.size());
     assertTrue(categories.contains("Category 1"));
     assertTrue(categories.contains("Category 2"));
+  }
+
+  @Test
+  void testAddTask() {
+    ScheduleTask task3 = new ScheduleTask("Task 3", "Category 3", "Task Description 3", false);
+    week.addTask(DayOfWeek.MONDAY, task3);
+    assertTrue(week.getDays().get(DayOfWeek.MONDAY).getTasks().contains(task3));
+  }
+
+  @Test
+  void testAddEvent() {
+    ScheduleEvent event3 = new ScheduleEvent("Event 3", "Category 3", "Description 3", "1330", "0200");
+    week.addEvent(DayOfWeek.TUESDAY, event3);
+    assertTrue(week.getDays().get(DayOfWeek.TUESDAY).getEvents().contains(event3));
+  }
+
+  @Test
+  void testAddCategory() {
+    String newCategory = "Category 3";
+    week.addCategory(newCategory);
+    assertTrue(week.getCategories().contains(newCategory));
+  }
+
+  @Test
+  void testDefaultConstructor() {
+    Week defaultWeek = new Week();
+
+    assertEquals("", defaultWeek.getName());
+    assertEquals(5, defaultWeek.getMaxEvent());
+    assertEquals(5, defaultWeek.getMaxTask());
+
+    assertTrue(defaultWeek.getCategories().isEmpty());
+
+    Map<DayOfWeek, Day> days = defaultWeek.getDays();
+    assertEquals(7, days.size());
+
+    for (Day day : days.values()) {
+      assertTrue(day.getTasks().isEmpty());
+      assertTrue(day.getEvents().isEmpty());
+    }
   }
 }

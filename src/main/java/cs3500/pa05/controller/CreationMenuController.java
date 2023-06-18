@@ -16,6 +16,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * The CreationMenuController class is responsible for creating events and tasks for
+ * a particular day and week. It handles the UI for creating new events and tasks,
+ * including their categories.
+ */
 public class CreationMenuController implements Controller {
   private DayOfWeek day;
   private Week week;
@@ -52,6 +57,13 @@ public class CreationMenuController implements Controller {
 
   private String category;
 
+  /**
+   * Constructor for CreationMenuController.
+   *
+   * @param day the DayOfWeek object representing the day for which the event or task is created.
+   * @param week the Week object that the events and tasks are added to.
+   * @param stage the Stage object where the scenes are displayed.
+   */
   CreationMenuController(DayOfWeek day, Week week, Stage stage) {
     this.day = day;
     this.week = week;
@@ -60,6 +72,9 @@ public class CreationMenuController implements Controller {
     this.taskCategoryButtons = new VBox();
   }
 
+  /**
+   * Sets the action handlers for the UI elements.
+   */
   public void run() {
     eventCreateButton.setOnAction(e -> handleEventCreation());
     taskCreateButton.setOnAction(e -> handleTaskCreation());
@@ -69,6 +84,9 @@ public class CreationMenuController implements Controller {
     createCategoryButtons(taskCategoryButtons, week);
   }
 
+  /**
+   * Handles the creation of a new event. The event is added to the week.
+   */
   private void handleEventCreation() {
     if(newEventCategoryButton.isSelected()) {
       category = newEventCategoryText.getText();
@@ -80,6 +98,9 @@ public class CreationMenuController implements Controller {
     switchScene();
   }
 
+  /**
+   * Handles the creation of a new task. The task is added to the week.
+   */
   private void handleTaskCreation() {
     if(newTaskCategoryButton.isSelected()) {
       category = newTaskCategoryText.getText();
@@ -90,6 +111,9 @@ public class CreationMenuController implements Controller {
     switchScene();
   }
 
+  /**
+   * Switches the scene back to the journal view.
+   */
   private void switchScene() {
     JournalController controller = new JournalController(stage, week);
     JournalView jv = new JournalView(controller, "journal.fxml");
@@ -98,6 +122,12 @@ public class CreationMenuController implements Controller {
     stage.setScene(scene);
   }
 
+  /**
+   * Creates the category buttons for the specified parent VBox using the categories in the week.
+   *
+   * @param parent the VBox where the category buttons are added.
+   * @param week the Week object that the categories are retrieved from.
+   */
   private void createCategoryButtons(VBox parent, Week week) {
     ArrayList<String> categories = week.getCategories();
     for(String category: categories) {
@@ -109,15 +139,30 @@ public class CreationMenuController implements Controller {
     }
   }
 
+  /**
+   * Handles the selection of an event category.
+   *
+   * @param categorySelected the selected category.
+   */
   private void handleEventCategorySelection(String categorySelected) {
     handleCategorySelection(categorySelected, eventCategoryButtons);
   }
 
+  /**
+   * Handles the selection of a task category.
+   *
+   * @param categorySelected the selected category.
+   */
   private void handleTaskCategorySelection(String categorySelected) {
     handleCategorySelection(categorySelected, taskCategoryButtons);
   }
 
-
+  /**
+   * Handles the selection of a category.
+   *
+   * @param categorySelected the selected category.
+   * @param categoryButtons the VBox containing the category buttons.
+   */
   private void handleCategorySelection(String categorySelected, VBox categoryButtons) {
     category = categorySelected;
     for(Node node : categoryButtons.getChildren()) {
@@ -137,6 +182,12 @@ public class CreationMenuController implements Controller {
     newCategoryButton.setSelected(false);
   }
 
+  /**
+   * Handles the selection of a new category.
+   *
+   * @param categoryButtons the VBox containing the category buttons.
+   * @param newCategoryText the TextField containing the new category text.
+   */
   private void handleNewCategorySelection(VBox categoryButtons, TextField newCategoryText) {
     category = newCategoryText.getText();
     for(Node node : categoryButtons.getChildren()) {
@@ -146,10 +197,17 @@ public class CreationMenuController implements Controller {
       }
     }
   }
+
+  /**
+   * Handles the selection of a new event category.
+   */
   private void handleNewEventCategorySelection() {
     handleNewCategorySelection(eventCategoryButtons, newEventCategoryText);
   }
 
+  /**
+   * Handles the selection of a new task category.
+   */
   private void handleNewTaskCategorySelection() {
     handleNewCategorySelection(taskCategoryButtons, newTaskCategoryText);
   }

@@ -17,6 +17,7 @@ public class ScheduleTask {
    * Constructs a new instance of ScheduleTask with the provided parameters.
    *
    * @param name        the name of the task
+   * @param category    type of categories task can be in
    * @param description a description of the task
    * @param isComplete  a boolean flag indicating if the task is complete
    */

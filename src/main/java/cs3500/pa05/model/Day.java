@@ -36,6 +36,15 @@ public class Day {
   }
 
   /**
+   * Adds a new task to this day's schedule.
+   *
+   * @param task the task to be added
+   */
+  public void addTask(ScheduleTask task) {
+    tasks.add(task);
+  }
+
+  /**
    * Returns the day of the week.
    *
    * @return the day of the week

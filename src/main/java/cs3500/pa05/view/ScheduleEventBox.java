@@ -51,6 +51,12 @@ public class ScheduleEventBox extends VBox {
     this.setStyle("-fx-border-color: black");
   }
 
+  /**
+   * Sets an action event handler to the delete button. This handler is invoked whenever the user
+   * interacts with the delete button.
+   *
+   * @param value the event handler to be set to the delete button
+   */
   public void setDeleteAction(javafx.event.EventHandler<javafx.event.ActionEvent> value) {
     this.deleteButton.setOnAction(value);
   }

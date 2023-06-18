@@ -31,7 +31,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-
+/**
+ * The JournalController class serves as the controller in the MVC architecture, handling
+ * user interactions and updating the model and view accordingly. Specifically, it manages
+ * the behavior of a journal that contains a week's worth of tasks and events.
+ */
 public class JournalController implements Controller{
   private final Stage stage;
   Week week = new Week();
@@ -135,16 +139,29 @@ public class JournalController implements Controller{
   @FXML
   private Label taskCompletion;
 
+  /**
+   * Constructor for the JournalController that accepts a Stage object.
+   *
+   * @param stage the Stage object used to change the scene in JavaFX application.
+   */
   public JournalController(Stage stage) {
     this.stage = stage;
   }
 
+  /**
+   * Constructor for the JournalController that accepts a Stage and a Week object.
+   *
+   * @param stage the Stage object used to change the scene in JavaFX application.
+   * @param week the Week object representing the data for the week in the journal.
+   */
   public JournalController(Stage stage, Week week) {
     this(stage);
     this.week = week;
   }
 
-
+  /**
+   * The run method sets up event handlers for UI components.
+   */
   public void run() {
     openFile.setOnAction(e -> loadBujo());
     saveFile.setOnAction(e -> saveBujo());
@@ -166,6 +183,9 @@ public class JournalController implements Controller{
     stage.setScene(scene);
   }
 
+  /**
+   * The loadBujo method reads in a bujo file and updates the week data accordingly.
+   */
   public void loadBujo() {
     ReadBujo reader = new ReadBujo(Path.of(filePath.getText()));
     ObjectMapper mapper = new ObjectMapper();
@@ -181,6 +201,9 @@ public class JournalController implements Controller{
     loadWeek();
   }
 
+  /**
+   * The saveBujo method writes the current week data to a bujo file.
+   */
   public void saveBujo() {
     ObjectMapper mapper = new ObjectMapper();
     WeekRecord weekRecord = new WeekRecord(this.week);
@@ -191,6 +214,9 @@ public class JournalController implements Controller{
     }
   }
 
+  /**
+   * The loadWeek method displays the week's data on the view.
+   */
   private void loadWeek() {
     for (Map.Entry<DayOfWeek, Day> day : week.getDays().entrySet()) {
       VBox vbox = null;

@@ -10,7 +10,7 @@ import java.util.Scanner;
  * an input and reads the entire content of the file as a single string.
  */
 public class ReadBujo {
-  private Path file;
+  private final Path file;
 
   /**
    * Constructs a new instance of ReadBujo, given the path of the file to read.

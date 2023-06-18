@@ -9,9 +9,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 /**
- * This class represents a visual box for a scheduled task in a JavaFX application.
- * It consists of a label for task name and description, and a checkbox to indicate
- * whether the task is complete.
+ * This class represents a user interface component for displaying a scheduled task and its details.
+ * The class extends the JavaFX VBox class and is designed to be used within a JavaFX application.
+ * Each ScheduleTaskBox consists of labels for the task name, category, and description. Additionally,
+ * it includes a checkbox to indicate whether the task is complete and a delete button that allows
+ * users to remove the task.
  */
 public class ScheduleTaskBox extends VBox {
   Label task = new Label("TASK");
@@ -24,10 +26,12 @@ public class ScheduleTaskBox extends VBox {
   CheckBox complete;
 
   /**
-   * Constructs a ScheduleTaskBox object and initializes it with the provided task details.
+   * Constructs a ScheduleTaskBox with the specified task details. The box includes a delete
+   * button with an icon loaded from the specified URL.
    *
-   * @param name        the name of the scheduled task
-   * @param description the description of the scheduled task
+   * @param name        the name of the task
+   * @param category    the category of the task
+   * @param description a brief description of the task
    */
   public ScheduleTaskBox(String name, String category, String description) {
     HBox title = new HBox();
@@ -48,19 +52,43 @@ public class ScheduleTaskBox extends VBox {
     this.setStyle("-fx-border-color: black");
   }
 
+  /**
+   * Constructs a ScheduleTaskBox with the specified task details and the status of the task.
+   * The checkbox will be selected if the task is complete.
+   *
+   * @param name        the name of the task
+   * @param category    the category of the task
+   * @param description a brief description of the task
+   * @param complete    the status of the task
+   */
   public ScheduleTaskBox(String name, String category, String description, boolean complete) {
     this(name, category, description);
     this.complete.setSelected(complete);
   }
 
+  /**
+   * Toggles the status of the task.
+   */
   public void toggleComplete() {
     complete.setSelected(!complete.isSelected());
   }
 
+  /**
+   * Sets an action event handler to the checkbox. This handler is invoked whenever the user
+   * interacts with the checkbox.
+   *
+   * @param value the event handler to be set to the checkbox
+   */
   public void setCompleteAction(javafx.event.EventHandler<javafx.event.ActionEvent> value) {
     complete.setOnAction(value);
   }
 
+  /**
+   * Sets an action event handler to the delete button. This handler is invoked whenever the user
+   * interacts with the delete button.
+   *
+   * @param value the event handler to be set to the delete button
+   */
   public void setDeleteAction(javafx.event.EventHandler<javafx.event.ActionEvent> value) {
     deleteButton.setOnAction(value);
   }

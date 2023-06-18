@@ -1,4 +1,4 @@
-package pa05.model;
+package pa05.model.model;
 
 import cs3500.pa05.model.Day;
 import cs3500.pa05.model.ScheduleEvent;
@@ -58,10 +58,46 @@ public class DayTest {
   }
 
   @Test
+  void testDeleteEvent() {
+    assertTrue(day.hasEvent(event1));
+    day.deleteEvent(event1);
+    assertFalse(day.hasEvent(event1));
+  }
+
+  @Test
+  void testHasTask() {
+    assertTrue(day.hasTask(task1));
+    assertFalse(day.hasTask(new ScheduleTask("Task 3", "Category 3", "Task Description 3", false)));
+  }
+
+  @Test
   void testGetTasks() {
     ArrayList<ScheduleTask> tasks = day.getTasks();
     assertEquals(2, tasks.size());
     assertTrue(tasks.contains(task1));
     assertTrue(tasks.contains(task2));
+  }
+
+  @Test
+  void testNumTasksComplete() {
+    assertEquals(0, day.numTasksComplete()); // only task2 is complete
+  }
+
+  @Test
+  void testNumTasksIncomplete() {
+    assertEquals(2, day.numTasksIncomplete()); // only task1 is incomplete
+  }
+
+  @Test
+  void testToggleCompleteTask() {
+    ScheduleTask newTask = new ScheduleTask("Task 3", "Category 3", "Task Description 3", false);
+    day.addTask(newTask);
+    assertEquals(3, day.numTasksIncomplete()); // considering task1 and newTask are incomplete now
+    newTask.toggleComplete();
+    assertEquals(1, day.numTasksComplete()); // considering task2 and newTask are complete now
+    assertEquals(2, day.numTasksIncomplete()); // only task1 is incomplete now
+    day.deleteTask(newTask);
+    assertEquals(0, day.numTasksComplete()); // only task2 is complete now
+    assertEquals(2, day.numTasksIncomplete()); // only task1 is incomplete now
   }
 }
