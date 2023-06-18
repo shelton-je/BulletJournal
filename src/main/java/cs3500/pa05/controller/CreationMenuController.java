@@ -117,6 +117,7 @@ public class CreationMenuController implements Controller {
     handleCategorySelection(categorySelected, taskCategoryButtons);
   }
 
+
   private void handleCategorySelection(String categorySelected, VBox categoryButtons) {
     category = categorySelected;
     for(Node node : categoryButtons.getChildren()) {
