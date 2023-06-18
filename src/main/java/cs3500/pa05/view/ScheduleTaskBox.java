@@ -23,7 +23,7 @@ public class ScheduleTaskBox extends VBox {
    * @param name        the name of the scheduled task
    * @param description the description of the scheduled task
    */
-  public ScheduleTaskBox(String name, String category, String description){
+  public ScheduleTaskBox(String name, String category, String description) {
     this.name = new Label(name);
     this.category = new Label(category);
     this.description = new Label(description);
@@ -31,5 +31,10 @@ public class ScheduleTaskBox extends VBox {
     this.getChildren().addAll(this.task, this.name, this.category, this.description, complete);
     this.setAlignment(Pos.CENTER);
     this.setStyle("-fx-border-color: black");
+  }
+
+  public ScheduleTaskBox(String name, String category, String description, boolean complete) {
+    this(name, category, description);
+    this.complete.setSelected(complete);
   }
 }

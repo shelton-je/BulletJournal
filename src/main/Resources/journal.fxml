@@ -119,8 +119,8 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="sunEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="sunTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="sun" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -136,8 +136,8 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="monEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="monTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="mon" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -153,8 +153,8 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="tueEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="tueTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="tue" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -170,8 +170,8 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="wenEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="wenTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="wen" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -187,8 +187,8 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="thuEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="thuTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="thu" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -204,8 +204,8 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="friEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="friTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="fri" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
@@ -221,8 +221,8 @@
                                                    <Font size="18.0" />
                                                 </font>
                                              </Label>
-                                             <Label text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="satEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="satTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
                                           </children>
                                        </VBox>
                                        <VBox fx:id="sat" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />

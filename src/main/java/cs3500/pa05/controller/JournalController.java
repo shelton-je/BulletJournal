@@ -20,6 +20,7 @@ import java.util.Map;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -64,6 +65,34 @@ public class JournalController implements Controller{
   private VBox fri;
   @FXML
   private VBox sat;
+  @FXML
+  private Label sunEventWarning;
+  @FXML
+  private Label monEventWarning;
+  @FXML
+  private Label tueEventWarning;
+  @FXML
+  private Label wenEventWarning;
+  @FXML
+  private Label thuEventWarning;
+  @FXML
+  private Label friEventWarning;
+  @FXML
+  private Label satEventWarning;
+  @FXML
+  private Label sunTaskWarning;
+  @FXML
+  private Label monTaskWarning;
+  @FXML
+  private Label tueTaskWarning;
+  @FXML
+  private Label wenTaskWarning;
+  @FXML
+  private Label thuTaskWarning;
+  @FXML
+  private Label friTaskWarning;
+  @FXML
+  private Label satTaskWarning;
 
 
   public JournalController(Stage stage) {
@@ -140,6 +169,7 @@ public class JournalController implements Controller{
       for (ScheduleTask t : day.getValue().getTasks()) {
         createTaskBox(t, vbox);
       }
+      handleWarnings(day.getValue());
     }
   }
 
@@ -154,4 +184,46 @@ public class JournalController implements Controller{
     VBox taskBox = new ScheduleTaskBox(task.getName(), task.getCategory(), task.getDescription());
     vbox.getChildren().add(taskBox);
   }
+
+  private void handleWarnings(Day day) {
+    switch(day.getDay()) {
+      case SUNDAY -> {
+        handleEventWarning(day, this.sunEventWarning);
+        handleTaskWarning(day, this.sunTaskWarning);
+      }
+      case MONDAY -> {
+        handleEventWarning(day, this.monEventWarning);
+        handleTaskWarning(day, this.monTaskWarning);
+      }
+      case TUESDAY -> {
+        handleEventWarning(day, this.tueEventWarning);
+        handleTaskWarning(day, this.tueTaskWarning);
+      }
+      case WEDNESDAY -> {
+        handleEventWarning(day, this.wenEventWarning);
+        handleTaskWarning(day, this.wenTaskWarning);
+      }
+      case THURSDAY -> {
+        handleEventWarning(day, this.thuEventWarning);
+        handleTaskWarning(day, this.thuTaskWarning);
+      }
+      case FRIDAY -> {
+        handleEventWarning(day, this.friEventWarning);
+        handleTaskWarning(day, this.friTaskWarning);
+      }
+      case SATURDAY -> {
+        handleEventWarning(day, this.satEventWarning);
+        handleTaskWarning(day, this.satTaskWarning);
+      }
+    }
+  }
+
+  private void handleEventWarning(Day day, Label eventWarning) {
+    eventWarning.setVisible(day.getEvents().size() > week.getMaxEvent());
+  }
+
+  private void handleTaskWarning(Day day, Label taskWarning) {
+    taskWarning.setVisible(day.getTasks().size() > week.getMaxTask());
+  }
+
 }
