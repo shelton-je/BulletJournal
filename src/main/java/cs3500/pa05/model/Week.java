@@ -16,6 +16,7 @@ public class Week {
   private String name;
   private int maxEvent;
   private int maxTask;
+  private ArrayList<String> categories;
   private Map<DayOfWeek, Day> days;
 
 
@@ -30,10 +31,12 @@ public class Week {
   @JsonCreator
   public Week(@JsonProperty("name") String name, @JsonProperty("max-events") int maxEvent,
               @JsonProperty("max-tasks") int maxTask,
+              @JsonProperty("categories") ArrayList<String> categories,
               @JsonProperty("days") Map<DayOfWeek, Day> days) {
     this.name = name;
     this.maxTask = maxTask;
     this.maxEvent = maxEvent;
+    this.categories = categories;
     this.days = days;
   }
 
@@ -46,6 +49,7 @@ public class Week {
     this.name = "";
     this.maxEvent = 5;
     this.maxTask = 5;
+    this.categories = new ArrayList<>();
     this.days = new HashMap<>();
     days.put(DayOfWeek.SUNDAY, new Day(DayOfWeek.SUNDAY, new ArrayList<>(), new ArrayList<>()));
     days.put(DayOfWeek.MONDAY, new Day(DayOfWeek.MONDAY, new ArrayList<>(), new ArrayList<>()));
@@ -112,4 +116,22 @@ public class Week {
   public void addEvent(DayOfWeek dayOfWeek, ScheduleEvent event) {
       this.days.get(dayOfWeek).getEvents().add(event);
     }
+
+  /**
+   * Adds the given String to the list of categories for this week
+   *
+   * @param category the String to add to the list
+   */
+  public void addCategory(String category) {
+    this.categories.add(category);
+  }
+
+  /**
+   * Returns the list of categories for this week
+   *
+   * @return the list of categories
+   */
+  public ArrayList<String> getCategories() {
+    return this.categories;
+  }
 }

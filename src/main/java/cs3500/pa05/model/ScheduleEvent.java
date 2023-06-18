@@ -6,16 +6,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ScheduleEvent {
 
   private final String name;
+  private final String category;
   private final String description;
   private final String startTime;
   private final String duration;
 
   @JsonCreator
   public ScheduleEvent(@JsonProperty("name") String name,
+                       @JsonProperty("category") String category,
                        @JsonProperty("description") String description,
                        @JsonProperty("start") String startTime,
                        @JsonProperty("duration") String duration) {
     this.name = name;
+    this.category = category;
     this.description = description;
     this.startTime = startTime;
     this.duration = duration;
@@ -28,6 +31,10 @@ public class ScheduleEvent {
 
   public String getName() {
     return this.name;
+  }
+
+  public String getCategory() {
+    return category;
   }
 
   public String getStartTime() {

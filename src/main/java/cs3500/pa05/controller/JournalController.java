@@ -145,13 +145,13 @@ public class JournalController implements Controller{
 
   private void createEventBox(ScheduleEvent event, VBox vbox) {
     VBox eventBox =
-        new ScheduleEventBox(event.getName(), event.getDescription(), event.getStartTime(),
+        new ScheduleEventBox(event.getName(), event.getCategory(), event.getDescription(), event.getStartTime(),
             event.getDuration());
     vbox.getChildren().add(eventBox);
   }
 
   private void createTaskBox(ScheduleTask task, VBox vbox) {
-    VBox taskBox = new ScheduleTaskBox(task.getName(), task.getDescription());
+    VBox taskBox = new ScheduleTaskBox(task.getName(), task.getCategory(), task.getDescription());
     vbox.getChildren().add(taskBox);
   }
 }

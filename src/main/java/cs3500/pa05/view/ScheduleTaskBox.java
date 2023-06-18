@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 public class ScheduleTaskBox extends VBox {
   Label task = new Label("TASK");
   Label name;
+  Label category;
   Label description;
   CheckBox complete;
 
@@ -22,11 +23,12 @@ public class ScheduleTaskBox extends VBox {
    * @param name        the name of the scheduled task
    * @param description the description of the scheduled task
    */
-  public ScheduleTaskBox(String name, String description){
+  public ScheduleTaskBox(String name, String category, String description){
     this.name = new Label(name);
+    this.category = new Label(category);
     this.description = new Label(description);
     complete = new CheckBox();
-    this.getChildren().addAll(this.task, this.name, this.description, complete);
+    this.getChildren().addAll(this.task, this.name, this.category, this.description, complete);
     this.setAlignment(Pos.CENTER);
     this.setStyle("-fx-border-color: black");
   }

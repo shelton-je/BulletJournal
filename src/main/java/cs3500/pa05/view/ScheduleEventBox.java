@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 public class ScheduleEventBox extends VBox {
   Label event = new Label("EVENT");
   Label name;
+  Label category;
   Label description;
   Label start;
   Label duration;
@@ -24,12 +25,13 @@ public class ScheduleEventBox extends VBox {
    * @param start       the start time of the scheduled event
    * @param duration    the duration of the scheduled event
    */
-  public ScheduleEventBox(String name, String description, String start, String duration) {
+  public ScheduleEventBox(String name, String category, String description, String start, String duration) {
     this.name = new Label(name);
+    this.category = new Label(category);
     this.description = new Label(description);
     this.start = new Label(start);
     this.duration = new Label(duration);
-    this.getChildren().addAll(this.event, this.name, this.description, this.start, this.duration);
+    this.getChildren().addAll(this.event, this.name, this.category, this.description, this.start, this.duration);
     this.setAlignment(Pos.CENTER);
     this.setStyle("-fx-border-color: black");
   }

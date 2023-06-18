@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class ScheduleTask {
   private final String name;
+  private final String category;
   private final String description;
   private boolean isComplete;
 
@@ -21,11 +22,12 @@ public class ScheduleTask {
    */
   @JsonCreator
   public ScheduleTask(@JsonProperty("name") String name,
+                       @JsonProperty("category") String category,
                        @JsonProperty("description") String description,
                        @JsonProperty("complete") boolean isComplete) {
     this.name = name;
     this.description = description;
-
+    this.category = category;
     this.isComplete = isComplete;
   }
 
@@ -45,6 +47,10 @@ public class ScheduleTask {
    */
   public String getName() {
     return name;
+  }
+
+  public String getCategory() {
+    return category;
   }
 
   /**
