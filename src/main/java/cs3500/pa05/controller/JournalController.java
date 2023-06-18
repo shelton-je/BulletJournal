@@ -114,7 +114,20 @@ public class JournalController implements Controller{
   private ProgressBar friProgress;
   @FXML
   private ProgressBar satProgress;
-
+  @FXML
+  private Label sunRemainingTasks;
+  @FXML
+  private Label monRemainingTasks;
+  @FXML
+  private Label tueRemainingTasks;
+  @FXML
+  private Label wenRemainingTasks;
+  @FXML
+  private Label thuRemainingTasks;
+  @FXML
+  private Label friRemainingTasks;
+  @FXML
+  private Label satRemainingTasks;
 
   public JournalController(Stage stage) {
     this.stage = stage;
@@ -191,6 +204,7 @@ public class JournalController implements Controller{
         createTaskBoxes(t, vbox);
       }
       handleWarnings(day.getValue());
+      handleRemainingTasks();
     }
   }
 
@@ -259,12 +273,14 @@ public class JournalController implements Controller{
     task.toggleComplete();
     scheduleTask.toggleComplete();
     handleProgresses();
+    handleRemainingTasks();
   }
 
   private void toggleScheduleComplete(ScheduleTask task, BarTaskBox barTask) {
     task.toggleComplete();
     barTask.toggleComplete();
     handleProgresses();
+    handleRemainingTasks();
   }
 
   private void handleProgresses() {
@@ -297,6 +313,18 @@ public class JournalController implements Controller{
     }
   }
 
+  private Label chooseRemainingTasksLabel(DayOfWeek dayOfWeek) {
+    switch(dayOfWeek) {
+      case SUNDAY -> { return sunRemainingTasks; }
+      case MONDAY -> { return monRemainingTasks; }
+      case TUESDAY -> { return tueRemainingTasks; }
+      case WEDNESDAY -> { return wenRemainingTasks; }
+      case THURSDAY -> { return thuRemainingTasks; }
+      case FRIDAY -> { return friRemainingTasks; }
+      default -> { return satRemainingTasks; }
+    }
+  }
+
   private void handleDeleteEvent(ScheduleEvent event, VBox vbox, ScheduleEventBox eventBox) {
     for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
@@ -318,5 +346,16 @@ public class JournalController implements Controller{
     }
     vbox.getChildren().remove(taskBox);
     handleProgresses();
+    handleRemainingTasks();
+  }
+
+  private void handleRemainingTasks() {
+    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+      Day day = entry.getValue();
+
+      Label dayRemainingTasks = chooseRemainingTasksLabel(entry.getKey());
+      String remainingTasks = String.valueOf(day.numTasksIncomplete());
+      dayRemainingTasks.setText(remainingTasks);
+    }
   }
 }

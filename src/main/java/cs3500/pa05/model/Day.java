@@ -72,6 +72,10 @@ public class Day {
     return numComplete;
   }
 
+  public int numTasksIncomplete() {
+    return tasks.size() - numTasksComplete();
+  }
+
   public boolean hasEvent(ScheduleEvent eventToFind) {
     for(ScheduleEvent event : events) {
       if(event.equals(eventToFind)) {
