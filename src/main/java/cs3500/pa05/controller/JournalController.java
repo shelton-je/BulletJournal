@@ -195,14 +195,16 @@ public class JournalController implements Controller{
   }
 
   private void createEventBox(ScheduleEvent event, VBox vbox) {
-    VBox eventBox =
+    ScheduleEventBox eventBox =
         new ScheduleEventBox(event.getName(), event.getCategory(), event.getDescription(), event.getStartTime(),
             event.getDuration());
+    eventBox.setDeleteAction(e -> handleDeleteEvent(event, vbox, eventBox));
     vbox.getChildren().add(eventBox);
   }
 
   private void createTaskBoxes(ScheduleTask task, VBox vbox) {
     ScheduleTaskBox scheduleTask = new ScheduleTaskBox(task.getName(), task.getCategory(), task.getDescription());
+    scheduleTask.setDeleteAction(e -> handleDeleteTask(task, vbox, scheduleTask));
     vbox.getChildren().add(scheduleTask);
 
     BarTaskBox barTask = new BarTaskBox(task.getName(), task.isComplete());
@@ -293,5 +295,28 @@ public class JournalController implements Controller{
       case FRIDAY -> { return friProgress; }
       default -> { return satProgress; }
     }
+  }
+
+  private void handleDeleteEvent(ScheduleEvent event, VBox vbox, ScheduleEventBox eventBox) {
+    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+      Day day = entry.getValue();
+
+      if(day.hasEvent(event)) {
+        day.deleteEvent(event);
+      }
+    }
+    vbox.getChildren().remove(eventBox);
+  }
+
+  private void handleDeleteTask(ScheduleTask task, VBox vbox, ScheduleTaskBox taskBox) {
+    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+      Day day = entry.getValue();
+
+      if(day.hasTask(task)) {
+        day.deleteTask(task);
+      }
+    }
+    vbox.getChildren().remove(taskBox);
+    handleProgresses();
   }
 }

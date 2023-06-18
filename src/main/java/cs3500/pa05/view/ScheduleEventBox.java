@@ -1,8 +1,11 @@
 package cs3500.pa05.view;
 
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 /**
@@ -11,7 +14,10 @@ import javafx.scene.layout.VBox;
  */
 public class ScheduleEventBox extends VBox {
   Label event = new Label("EVENT");
+  ImageView delete_image = new ImageView(getClass().getClassLoader().getResource
+      ("delete_icon.png").toString());
   Label name;
+  Button deleteButton;
   Label category;
   Label description;
   Label start;
@@ -26,13 +32,26 @@ public class ScheduleEventBox extends VBox {
    * @param duration    the duration of the scheduled event
    */
   public ScheduleEventBox(String name, String category, String description, String start, String duration) {
+    HBox title = new HBox();
+    title.setAlignment(Pos.CENTER);
+    deleteButton = new Button();
+    delete_image.setFitHeight(20);
+    delete_image.setFitWidth(20);
+    deleteButton.setGraphic(delete_image);
+
+    title.getChildren().addAll(this.event, this.deleteButton);
+
     this.name = new Label(name);
     this.category = new Label(category);
     this.description = new Label(description);
     this.start = new Label(start);
     this.duration = new Label(duration);
-    this.getChildren().addAll(this.event, this.name, this.category, this.description, this.start, this.duration);
+    this.getChildren().addAll(title, this.name, this.category, this.description, this.start, this.duration);
     this.setAlignment(Pos.CENTER);
     this.setStyle("-fx-border-color: black");
+  }
+
+  public void setDeleteAction(javafx.event.EventHandler<javafx.event.ActionEvent> value) {
+    this.deleteButton.setOnAction(value);
   }
 }

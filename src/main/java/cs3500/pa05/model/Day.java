@@ -2,6 +2,7 @@ package cs3500.pa05.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import cs3500.pa05.view.ScheduleEventBox;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,4 +72,29 @@ public class Day {
     return numComplete;
   }
 
+  public boolean hasEvent(ScheduleEvent eventToFind) {
+    for(ScheduleEvent event : events) {
+      if(event.equals(eventToFind)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public void deleteEvent(ScheduleEvent event) {
+    events.remove(event);
+  }
+
+  public boolean hasTask(ScheduleTask taskToFind) {
+    for(ScheduleTask task : tasks) {
+      if(task.equals(taskToFind)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public void deleteTask(ScheduleTask task) {
+    tasks.remove(task);
+  }
 }
