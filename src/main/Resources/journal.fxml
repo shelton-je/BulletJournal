@@ -38,7 +38,7 @@
                </MenuBar>
                <HBox prefHeight="700.0" prefWidth="200.0">
                   <children>
-                     <VBox prefHeight="200.0" prefWidth="250.0">
+                     <VBox fx:id="tasksBar" prefHeight="200.0" prefWidth="250.0">
                         <children>
                            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: Black;">
                               <children>

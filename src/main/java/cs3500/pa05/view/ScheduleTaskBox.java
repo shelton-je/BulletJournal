@@ -37,4 +37,12 @@ public class ScheduleTaskBox extends VBox {
     this(name, category, description);
     this.complete.setSelected(complete);
   }
+
+  public void toggleComplete() {
+    complete.setSelected(!complete.isSelected());
+  }
+
+  public void setCompleteAction(javafx.event.EventHandler<javafx.event.ActionEvent> value) {
+    complete.setOnAction(value);
+  }
 }

@@ -61,4 +61,8 @@ public class ScheduleTask {
   public boolean isComplete() {
     return isComplete;
   }
+
+  public void toggleComplete() {
+    isComplete = !isComplete;
+  }
 }

@@ -12,17 +12,20 @@ import cs3500.pa05.model.ScheduleEvent;
 import cs3500.pa05.model.ScheduleTask;
 import cs3500.pa05.model.Week;
 import cs3500.pa05.model.WeekRecord;
+import cs3500.pa05.view.BarTaskBox;
 import cs3500.pa05.view.JournalView;
 import cs3500.pa05.view.ScheduleEventBox;
 import cs3500.pa05.view.ScheduleTaskBox;
 import java.nio.file.Path;
 import java.util.Map;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -93,6 +96,8 @@ public class JournalController implements Controller{
   private Label friTaskWarning;
   @FXML
   private Label satTaskWarning;
+  @FXML
+  private VBox tasksBar;
 
 
   public JournalController(Stage stage) {
@@ -167,7 +172,7 @@ public class JournalController implements Controller{
         createEventBox(e, vbox);
       }
       for (ScheduleTask t : day.getValue().getTasks()) {
-        createTaskBox(t, vbox);
+        createTaskBoxes(t, vbox);
       }
       handleWarnings(day.getValue());
     }
@@ -180,9 +185,15 @@ public class JournalController implements Controller{
     vbox.getChildren().add(eventBox);
   }
 
-  private void createTaskBox(ScheduleTask task, VBox vbox) {
-    VBox taskBox = new ScheduleTaskBox(task.getName(), task.getCategory(), task.getDescription());
-    vbox.getChildren().add(taskBox);
+  private void createTaskBoxes(ScheduleTask task, VBox vbox) {
+    ScheduleTaskBox scheduleTask = new ScheduleTaskBox(task.getName(), task.getCategory(), task.getDescription());
+    vbox.getChildren().add(scheduleTask);
+
+    BarTaskBox barTask = new BarTaskBox(task.getName(), task.isComplete());
+    tasksBar.getChildren().add(barTask);
+
+    scheduleTask.setCompleteAction(e -> toggleScheduleComplete(task, barTask));
+    barTask.setCompleteAction(e -> toggleBarComplete(task, scheduleTask));
   }
 
   private void handleWarnings(Day day) {
@@ -224,6 +235,16 @@ public class JournalController implements Controller{
 
   private void handleTaskWarning(Day day, Label taskWarning) {
     taskWarning.setVisible(day.getTasks().size() > week.getMaxTask());
+  }
+
+  private void toggleBarComplete(ScheduleTask task, ScheduleTaskBox scheduleTask) {
+    task.toggleComplete();
+    scheduleTask.toggleComplete();
+  }
+
+  private void toggleScheduleComplete(ScheduleTask task, BarTaskBox barTask) {
+    task.toggleComplete();
+    barTask.toggleComplete();
   }
 
 }
