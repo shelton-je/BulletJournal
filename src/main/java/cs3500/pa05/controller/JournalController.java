@@ -128,6 +128,12 @@ public class JournalController implements Controller{
   private Label friRemainingTasks;
   @FXML
   private Label satRemainingTasks;
+  @FXML
+  private Label totalEvents;
+  @FXML
+  private Label totalTasks;
+  @FXML
+  private Label taskCompletion;
 
   public JournalController(Stage stage) {
     this.stage = stage;
@@ -205,6 +211,7 @@ public class JournalController implements Controller{
       }
       handleWarnings(day.getValue());
       handleRemainingTasks();
+      handleOverview();
     }
   }
 
@@ -218,11 +225,12 @@ public class JournalController implements Controller{
 
   private void createTaskBoxes(ScheduleTask task, VBox vbox) {
     ScheduleTaskBox scheduleTask = new ScheduleTaskBox(task.getName(), task.getCategory(), task.getDescription());
-    scheduleTask.setDeleteAction(e -> handleDeleteTask(task, vbox, scheduleTask));
     vbox.getChildren().add(scheduleTask);
 
     BarTaskBox barTask = new BarTaskBox(task.getName(), task.isComplete());
     tasksBar.getChildren().add(barTask);
+
+    scheduleTask.setDeleteAction(e -> handleDeleteTask(task, vbox, scheduleTask, barTask));
 
     scheduleTask.setCompleteAction(e -> toggleScheduleComplete(task, barTask));
     barTask.setCompleteAction(e -> toggleBarComplete(task, scheduleTask));
@@ -274,6 +282,7 @@ public class JournalController implements Controller{
     scheduleTask.toggleComplete();
     handleProgresses();
     handleRemainingTasks();
+    handleOverview();
   }
 
   private void toggleScheduleComplete(ScheduleTask task, BarTaskBox barTask) {
@@ -281,6 +290,7 @@ public class JournalController implements Controller{
     barTask.toggleComplete();
     handleProgresses();
     handleRemainingTasks();
+    handleOverview();
   }
 
   private void handleProgresses() {
@@ -334,9 +344,10 @@ public class JournalController implements Controller{
       }
     }
     vbox.getChildren().remove(eventBox);
+    handleOverview();
   }
 
-  private void handleDeleteTask(ScheduleTask task, VBox vbox, ScheduleTaskBox taskBox) {
+  private void handleDeleteTask(ScheduleTask task, VBox vbox, ScheduleTaskBox taskBox, BarTaskBox barTask) {
     for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
 
@@ -345,8 +356,10 @@ public class JournalController implements Controller{
       }
     }
     vbox.getChildren().remove(taskBox);
+    tasksBar.getChildren().remove(barTask);
     handleProgresses();
     handleRemainingTasks();
+    handleOverview();
   }
 
   private void handleRemainingTasks() {
@@ -357,5 +370,30 @@ public class JournalController implements Controller{
       String remainingTasks = String.valueOf(day.numTasksIncomplete());
       dayRemainingTasks.setText(remainingTasks);
     }
+  }
+
+  private void handleOverview() {
+    int totalEvents = 0;
+    double totalTasks = 0;
+    double tasksCompleted = 0;
+    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+      Day day = entry.getValue();
+
+      totalEvents += day.getEvents().size();
+      totalTasks += day.getTasks().size();
+      tasksCompleted += day.numTasksComplete();
+    }
+
+    double taskCompletionPercentage;
+    if(totalTasks == 0) {
+      taskCompletionPercentage = 100;
+    }
+    else {
+      taskCompletionPercentage = (tasksCompleted / totalTasks) * 100;
+    }
+
+    this.totalEvents.setText(String.valueOf(totalEvents));
+    this.totalTasks.setText(String.valueOf((int) totalTasks));
+    this.taskCompletion.setText(String.format("%.1f", taskCompletionPercentage));
   }
 }

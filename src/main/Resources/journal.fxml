@@ -65,7 +65,33 @@
                                        </Label>
                                     </children>
                                  </HBox>
-                                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="291.0" />
+                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="291.0">
+                                    <children>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label text="Week Overview" />
+                                             <HBox alignment="CENTER">
+                                                <children>
+                                                   <Label text="Total Events: " />
+                                                   <Label fx:id="totalEvents" />
+                                                </children>
+                                             </HBox>
+                                             <HBox alignment="CENTER">
+                                                <children>
+                                                   <Label text="Total Tasks: " />
+                                                   <Label fx:id="totalTasks" />
+                                                </children>
+                                             </HBox>
+                                             <HBox alignment="CENTER">
+                                                <children>
+                                                   <Label text="Task Completion: " />
+                                                   <Label fx:id="taskCompletion" />
+                                                   <Label text="\%" />
+                                                </children>
+                                             </HBox>
+                                          </children>
+                                       </VBox>
+                                    </children></HBox>
                               </children>
                            </HBox>
                            <HBox prefHeight="600.0" prefWidth="200.0">
