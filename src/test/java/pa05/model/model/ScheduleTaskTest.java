@@ -1,4 +1,4 @@
-package pa05.model;
+package pa05.model.model;
 
 import cs3500.pa05.model.ScheduleTask;
 import org.junit.Before;

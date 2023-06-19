@@ -4,12 +4,9 @@ import cs3500.pa05.model.Day;
 import cs3500.pa05.model.ScheduleEvent;
 import cs3500.pa05.model.ScheduleTask;
 import cs3500.pa05.model.DayOfWeek;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
