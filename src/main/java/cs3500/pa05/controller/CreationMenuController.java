@@ -88,12 +88,17 @@ public class CreationMenuController implements Controller {
    * Handles the creation of a new event. The event is added to the week.
    */
   private void handleEventCreation() {
-    if(newEventCategoryButton.isSelected()) {
+    if (eventName.getText().equals("") || eventStart.getText().equals("") ||
+        eventDuration.getText().equals("")) {
+      return;
+    }
+    if (newEventCategoryButton.isSelected()) {
       category = newEventCategoryText.getText();
       week.addCategory(category);
     }
-    ScheduleEvent event = new ScheduleEvent(eventName.getText(), category, eventDescription.getText(),
-        eventStart.getText(), eventDuration.getText());
+    ScheduleEvent event =
+        new ScheduleEvent(eventName.getText(), category, eventDescription.getText(),
+            eventStart.getText(), eventDuration.getText());
     week.addEvent(day, event);
     switchScene();
   }
@@ -102,6 +107,9 @@ public class CreationMenuController implements Controller {
    * Handles the creation of a new task. The task is added to the week.
    */
   private void handleTaskCreation() {
+    if (taskName.getText().equals("")) {
+      return;
+    }
     if(newTaskCategoryButton.isSelected()) {
       category = newTaskCategoryText.getText();
       week.addCategory(category);
