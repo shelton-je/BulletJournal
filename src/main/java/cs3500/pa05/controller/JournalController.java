@@ -43,6 +43,12 @@ public class JournalController implements Controller{
   @FXML
   private TextField filePath;
   @FXML
+  private Label title;
+  @FXML
+  private Button setNameButton;
+  @FXML
+  private TextField nameBox;
+  @FXML
   private MenuItem openFile;
   @FXML
   private MenuItem saveFile;
@@ -163,8 +169,10 @@ public class JournalController implements Controller{
    * The run method sets up event handlers for UI components.
    */
   public void run() {
+    title.setText(week.getName());
     openFile.setOnAction(e -> loadBujo());
     saveFile.setOnAction(e -> saveBujo());
+    setNameButton.setOnAction(e -> handleNameChange());
     sunCreate.setOnAction(e -> switchScene(DayOfWeek.SUNDAY));
     monCreate.setOnAction(e -> switchScene(DayOfWeek.MONDAY));
     tueCreate.setOnAction(e -> switchScene(DayOfWeek.TUESDAY));
@@ -172,6 +180,11 @@ public class JournalController implements Controller{
     thuCreate.setOnAction(e -> switchScene(DayOfWeek.THURSDAY));
     friCreate.setOnAction(e -> switchScene(DayOfWeek.FRIDAY));
     satCreate.setOnAction(e -> switchScene(DayOfWeek.SATURDAY));
+    loadWeek();
+  }
+
+  private void handleNameChange() {
+    this.week.setName(nameBox.getText());
     loadWeek();
   }
 
@@ -218,6 +231,7 @@ public class JournalController implements Controller{
    * The loadWeek method displays the week's data on the view.
    */
   private void loadWeek() {
+    this.title.setText(this.week.getName());
     for (Map.Entry<DayOfWeek, Day> day : week.getDays().entrySet()) {
       VBox vbox = null;
       switch (day.getKey()) {

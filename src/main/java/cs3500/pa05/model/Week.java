@@ -134,4 +134,8 @@ public class Week {
   public ArrayList<String> getCategories() {
     return this.categories;
   }
+
+  public void setName(String s) {
+    this.name = s;
+  }
 }
