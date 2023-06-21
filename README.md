@@ -25,7 +25,7 @@ The application should start running if your system is set up to run JAR files w
 - Change the directory to where the JAR file is located. For instance, 
 if you saved the file in your Downloads folder, type cd Downloads.
 
-- Once you're in the correct directory, type java -jar pa05-template.jar to start the application.
+- Once you're in the correct directory, type java -jar pa05-template.jar to start the application..
 
 Enjoy using the application!
 
