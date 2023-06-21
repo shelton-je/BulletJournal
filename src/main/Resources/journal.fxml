@@ -106,17 +106,6 @@
                                                    <Font size="36.0" />
                                                 </font>
                                              </Label>
-                                             <MenuButton fx:id="startDaySelector" mnemonicParsing="false" text="Start Day">
-                                               <items>
-                                                 <MenuItem fx:id="startDaySunday" mnemonicParsing="false" text="Sunday" />
-                                                 <MenuItem fx:id="startDayMonday" mnemonicParsing="false" text="Monday" />
-                                                   <MenuItem fx:id="startDayTuesday" mnemonicParsing="false" text="Tuesday" />
-                                                   <MenuItem fx:id="startDayWednesday" mnemonicParsing="false" text="Wednesday" />
-                                                   <MenuItem fx:id="startDayThursday" mnemonicParsing="false" text="Thursday" />
-                                                   <MenuItem fx:id="startDayFriday" mnemonicParsing="false" text="Friday" />
-                                                   <MenuItem fx:id="startDaySaturday" mnemonicParsing="false" text="Saturday" />
-                                               </items>
-                                             </MenuButton>
                                           </children>
                                        </VBox>
                                     </children>
