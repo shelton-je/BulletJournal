@@ -10,11 +10,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class ScheduleEvent {
 
-  private final String name;
-  private final String category;
-  private final String description;
-  private final String startTime;
-  private final String duration;
+  private String name;
+  private String category;
+  private String description;
+  private String startTime;
+  private String duration;
 
   /**
    * Constructs a new ScheduleEvent with the given parameters.
@@ -81,6 +81,26 @@ public class ScheduleEvent {
    */
   public String getDuration() {
     return this.duration;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  public void setStartTime(String startTime) {
+    this.startTime = startTime;
+  }
+
+  public void setDuration(String durtation) {
+    this.duration = duration;
   }
 
 }

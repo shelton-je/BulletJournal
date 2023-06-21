@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * and a flag indicating whether the task is complete.
  */
 public class ScheduleTask {
-  private final String name;
-  private final String category;
-  private final String description;
+  private String name;
+  private String category;
+  private String description;
   private boolean isComplete;
 
   /**
@@ -74,5 +74,17 @@ public class ScheduleTask {
    */
   public void toggleComplete() {
     isComplete = !isComplete;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
   }
 }
