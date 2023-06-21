@@ -13,7 +13,7 @@ public class OutPutFileWriter {
    * this method will write a string to an output file
    *
    * @param filePath the file name to write the contents to
-   * @param contents a String that will be the contents to write in the file
+   * @param contents a String that will be the contents to write in the files
    */
   public static void writeToFile(String filePath, String contents) {
 
