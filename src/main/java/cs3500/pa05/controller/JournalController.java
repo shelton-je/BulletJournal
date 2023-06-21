@@ -144,6 +144,14 @@ public class JournalController implements Controller{
   private Label totalTasks;
   @FXML
   private Label taskCompletion;
+  @FXML
+  private TextField maxEventsText;
+  @FXML
+  private Button maxEventsButton;
+  @FXML
+  private TextField maxTasksText;
+  @FXML
+  private Button maxTasksButton;
 
   /**
    * Constructor for the JournalController that accepts a Stage object.
@@ -173,6 +181,8 @@ public class JournalController implements Controller{
     openFile.setOnAction(e -> loadBujo());
     saveFile.setOnAction(e -> saveBujo());
     setNameButton.setOnAction(e -> handleNameChange());
+    maxEventsButton.setOnAction(e -> handleMaxEventsUpdate());
+    maxTasksButton.setOnAction(e -> handleMaxTasksUpdate());
     sunCreate.setOnAction(e -> switchScene(DayOfWeek.SUNDAY));
     monCreate.setOnAction(e -> switchScene(DayOfWeek.MONDAY));
     tueCreate.setOnAction(e -> switchScene(DayOfWeek.TUESDAY));
@@ -319,6 +329,14 @@ public class JournalController implements Controller{
     }
   }
 
+  public void handleAllWarnings() {
+    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+      Day day = entry.getValue();
+
+      handleWarnings(day);
+    }
+  }
+
   private void handleEventWarning(Day day, Label eventWarning) {
     eventWarning.setVisible(day.getEvents().size() > week.getMaxEvent());
   }
@@ -391,6 +409,7 @@ public class JournalController implements Controller{
 
       if(day.hasEvent(event)) {
         day.deleteEvent(event);
+        handleWarnings(day);
       }
     }
     vbox.getChildren().remove(eventBox);
@@ -403,6 +422,7 @@ public class JournalController implements Controller{
 
       if(day.hasTask(task)) {
         day.deleteTask(task);
+        handleWarnings(day);
       }
     }
     vbox.getChildren().remove(taskBox);
@@ -436,7 +456,7 @@ public class JournalController implements Controller{
 
     double taskCompletionPercentage;
     if(totalTasks == 0) {
-      taskCompletionPercentage = 100;
+      taskCompletionPercentage = 0;
     }
     else {
       taskCompletionPercentage = (tasksCompleted / totalTasks) * 100;
@@ -445,5 +465,29 @@ public class JournalController implements Controller{
     this.totalEvents.setText(String.valueOf(totalEvents));
     this.totalTasks.setText(String.valueOf((int) totalTasks));
     this.taskCompletion.setText(String.format("%.1f", taskCompletionPercentage));
+  }
+
+  private void handleMaxEventsUpdate() {
+    String text = maxEventsText.getText();
+
+    try {
+      int newMax = Integer.parseInt(text);
+      week.setMaxEvent(newMax);
+      handleAllWarnings();
+    } catch (NumberFormatException e) {
+
+    }
+  }
+
+  private void handleMaxTasksUpdate() {
+    String text = maxTasksText.getText();
+
+    try {
+      int newMax = Integer.parseInt(text);
+      week.setMaxTask(newMax);
+      handleAllWarnings();
+    } catch (NumberFormatException e) {
+
+    }
   }
 }

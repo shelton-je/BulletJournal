@@ -144,4 +144,32 @@ public class Week {
   public void setName(String s) {
     this.name = s;
   }
+
+  /**
+   * Returns the max events per day for this week.
+   *
+   * @return the max events per day
+   */
+  public int getMaxEvents() { return this.maxEvent; }
+
+  /**
+   * Sets the max events per day for the week.
+   *
+   * @param newMax the new max to which to set the max events per day
+   */
+  public void setMaxEvent(int newMax) { this.maxEvent = newMax; }
+
+  /**
+   * Returns the max tasks per day for this week.
+   *
+   * @return the max tasks per day
+   */
+  public int getMaxTasks() { return this.maxTask; }
+
+  /**
+   * Sets the max tasks per day for the week.
+   *
+   * @param newMax the new max to which to set the max tasks per day
+   */
+  public void setMaxTask(int newMax) { this.maxTask = newMax; }
 }

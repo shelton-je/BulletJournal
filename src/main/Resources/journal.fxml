@@ -55,15 +55,35 @@
                         <children>
                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="875.0">
                               <children>
-                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="291.0">
+                                 <VBox>
                                     <children>
-                                       <TextField fx:id="nameBox" alignment="BOTTOM_CENTER" prefHeight="12.0" prefWidth="89.0" />
-                                       <Button fx:id="setNameButton" mnemonicParsing="false" prefHeight="37.0" prefWidth="54.0" text="Change Name" textAlignment="CENTER" wrapText="true">
-                                          <font>
-                                             <Font size="10.0" />
-                                          </font>
-                                       </Button>
-                                    </children></HBox>
+                                       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="291.0">
+                                          <children>
+                                             <Label text="Week Name: " />
+                                             <TextField fx:id="nameBox" alignment="BOTTOM_CENTER" prefHeight="12.0" prefWidth="89.0" />
+                                             <Button fx:id="setNameButton" mnemonicParsing="false" prefHeight="37.0" text="Change Name" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font size="10.0" />
+                                                </font>
+                                             </Button>
+                                          </children>
+                                       </HBox>
+                                       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Max Events Per Day: " />
+                                             <TextField fx:id="maxEventsText" prefWidth="40.0" />
+                                             <Button fx:id="maxEventsButton" mnemonicParsing="false" text="Update" />
+                                          </children>
+                                       </HBox>
+                                       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Max Tasks Per Day: " />
+                                             <TextField fx:id="maxTasksText" maxWidth="40.0" />
+                                             <Button fx:id="maxTasksButton" mnemonicParsing="false" text="Update" />
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
                                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="293.0">
                                     <children>
                                        <Label fx:id="title" text="Name of week" textFill="#0d00ff">

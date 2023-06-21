@@ -125,4 +125,13 @@ public class WeekTest {
       assertTrue(day.getEvents().isEmpty());
     }
   }
+
+  @Test
+  void testMaxEvents() {
+    assertEquals(5, week.getMaxEvents());
+
+    week.setMaxEvent(8);
+
+    assertEquals(8, week.getMaxEvents());
+  }
 }
