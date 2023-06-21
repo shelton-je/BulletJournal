@@ -24,6 +24,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
@@ -38,6 +39,7 @@ import javafx.stage.Stage;
  */
 public class JournalController implements Controller{
   private final Stage stage;
+  private  TabsController tabsContoller;
   Week week = new Week();
 
   @FXML
@@ -46,6 +48,10 @@ public class JournalController implements Controller{
   private Label title;
   @FXML
   private Button setNameButton;
+  @FXML
+  private Button newTab;
+  @FXML
+  private MenuButton tabs;
   @FXML
   private TextField nameBox;
   @FXML
@@ -158,8 +164,9 @@ public class JournalController implements Controller{
    *
    * @param stage the Stage object used to change the scene in JavaFX application.
    */
-  public JournalController(Stage stage) {
+  public JournalController(Stage stage, TabsController tc) {
     this.stage = stage;
+    this.tabsContoller = tc;
   }
 
   /**
@@ -168,8 +175,8 @@ public class JournalController implements Controller{
    * @param stage the Stage object used to change the scene in JavaFX application.
    * @param week the Week object representing the data for the week in the journal.
    */
-  public JournalController(Stage stage, Week week) {
-    this(stage);
+  public JournalController(Stage stage, Week week, TabsController tc) {
+    this(stage, tc);
     this.week = week;
   }
 
@@ -183,14 +190,35 @@ public class JournalController implements Controller{
     setNameButton.setOnAction(e -> handleNameChange());
     maxEventsButton.setOnAction(e -> handleMaxEventsUpdate());
     maxTasksButton.setOnAction(e -> handleMaxTasksUpdate());
-    sunCreate.setOnAction(e -> switchScene(DayOfWeek.SUNDAY));
-    monCreate.setOnAction(e -> switchScene(DayOfWeek.MONDAY));
-    tueCreate.setOnAction(e -> switchScene(DayOfWeek.TUESDAY));
-    wenCreate.setOnAction(e -> switchScene(DayOfWeek.WEDNESDAY));
-    thuCreate.setOnAction(e -> switchScene(DayOfWeek.THURSDAY));
-    friCreate.setOnAction(e -> switchScene(DayOfWeek.FRIDAY));
-    satCreate.setOnAction(e -> switchScene(DayOfWeek.SATURDAY));
+    sunCreate.setOnAction(e -> switchToCreationScene(DayOfWeek.SUNDAY));
+    monCreate.setOnAction(e -> switchToCreationScene(DayOfWeek.MONDAY));
+    tueCreate.setOnAction(e -> switchToCreationScene(DayOfWeek.TUESDAY));
+    wenCreate.setOnAction(e -> switchToCreationScene(DayOfWeek.WEDNESDAY));
+    thuCreate.setOnAction(e -> switchToCreationScene(DayOfWeek.THURSDAY));
+    friCreate.setOnAction(e -> switchToCreationScene(DayOfWeek.FRIDAY));
+    satCreate.setOnAction(e -> switchToCreationScene(DayOfWeek.SATURDAY));
+    newTab.setOnAction(e -> createNewTab());
+    loadTabs();
     loadWeek();
+  }
+
+  private void createNewTab() {
+    this.tabsContoller.addController(new JournalController(this.stage, this.tabsContoller));
+  }
+
+  private void loadTabs() {
+    for(JournalController jc: tabsContoller.getTabs()){
+      MenuItem tab = new MenuItem(jc.getWeek().getName());
+      tabs.getItems().add(tab);
+      tab.setOnAction(e -> switchTab(jc));
+    }
+  }
+
+  private void switchTab(JournalController jc) {
+    JournalView jv = new JournalView(jc, "journal.fxml");
+    Scene scene = jv.load();
+    jc.run();
+    stage.setScene(scene);
   }
 
   private void handleNameChange() {
@@ -198,8 +226,8 @@ public class JournalController implements Controller{
     title.setText(week.getName());
   }
 
-  private void switchScene(DayOfWeek dayOfWeek) {
-    CreationMenuController menuController = new CreationMenuController(dayOfWeek, week, stage);
+  private void switchToCreationScene(DayOfWeek dayOfWeek) {
+    CreationMenuController menuController = new CreationMenuController(dayOfWeek, week, stage, tabsContoller);
     JournalView jv = new JournalView(menuController, "creation.fxml");
     Scene scene = jv.load();
     menuController.run();
@@ -489,5 +517,9 @@ public class JournalController implements Controller{
     } catch (NumberFormatException e) {
 
     }
+  }
+
+  public Week getWeek(){
+    return this.week;
   }
 }

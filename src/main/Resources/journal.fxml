@@ -34,6 +34,19 @@
                            </MenuButton>
                         </graphic>
                    </Menu>
+                     <Menu mnemonicParsing="false">
+                        <graphic>
+                           <MenuButton fx:id="tabs" mnemonicParsing="false" popupSide="RIGHT" prefHeight="33.0" prefWidth="82.0" text="Tabs">
+                              <graphic>
+                                 <Button fx:id="newTab" alignment="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="18.0" text="+" textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                       <Font size="11.0" />
+                                    </font>
+                                 </Button>
+                              </graphic>
+                           </MenuButton>
+                        </graphic>
+                     </Menu>
                  </menus>
                </MenuBar>
                <HBox prefHeight="700.0" prefWidth="200.0">

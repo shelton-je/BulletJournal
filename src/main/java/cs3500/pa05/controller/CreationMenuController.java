@@ -25,6 +25,7 @@ public class CreationMenuController implements Controller {
   private DayOfWeek day;
   private Week week;
   private Stage stage;
+  private TabsController tc;
 
   @FXML
   private Button eventCreateButton;
@@ -64,10 +65,11 @@ public class CreationMenuController implements Controller {
    * @param week the Week object that the events and tasks are added to.
    * @param stage the Stage object where the scenes are displayed.
    */
-  CreationMenuController(DayOfWeek day, Week week, Stage stage) {
+  CreationMenuController(DayOfWeek day, Week week, Stage stage, TabsController tc) {
     this.day = day;
     this.week = week;
     this.stage = stage;
+    this.tc = tc;
     this.eventCategoryButtons = new VBox();
     this.taskCategoryButtons = new VBox();
   }
@@ -123,7 +125,7 @@ public class CreationMenuController implements Controller {
    * Switches the scene back to the journal view.
    */
   private void switchScene() {
-    JournalController controller = new JournalController(stage, week);
+    JournalController controller = new JournalController(stage, week, tc);
     JournalView jv = new JournalView(controller, "journal.fxml");
     Scene scene = jv.load();
     controller.run();

@@ -4,6 +4,7 @@ package cs3500.pa05;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cs3500.pa05.controller.JournalController;
+import cs3500.pa05.controller.TabsController;
 import cs3500.pa05.model.DayOfWeek;
 import cs3500.pa05.model.Week;
 import cs3500.pa05.view.JournalView;
@@ -22,8 +23,9 @@ public class Driver extends Application {
    */
   @Override
   public void start(Stage stage) {
-
-    JournalController journalController = new JournalController(stage);
+    TabsController tc = new TabsController();
+    JournalController journalController = new JournalController(stage, tc);
+    tc.addController(journalController);
     JournalView journalView  = new JournalView(journalController, "journal.fxml");
 
 
