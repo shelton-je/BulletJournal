@@ -22,10 +22,10 @@ import javafx.stage.Stage;
  * including their categories.
  */
 public class CreationMenuController implements Controller {
-  private DayOfWeek day;
-  private Week week;
-  private Stage stage;
-  private TabsController tc;
+  private final DayOfWeek day;
+  private final Week week;
+  private final Stage stage;
+  private final TabsController tc;
 
   @FXML
   private Button eventCreateButton;

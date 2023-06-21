@@ -1,6 +1,5 @@
 package cs3500.pa05.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Enumerates the days of a week. This enum is used to represent days of the week in the scheduling

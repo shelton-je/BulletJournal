@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -564,6 +563,11 @@ public class JournalController implements Controller{
     }
   }
 
+  /**
+   * Get the current week the user is using
+   *
+   * @return    the week
+   */
   public Week getWeek(){
     return this.week;
   }

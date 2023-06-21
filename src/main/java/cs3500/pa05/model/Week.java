@@ -15,8 +15,8 @@ public class Week {
   private String name;
   private int maxEvent;
   private int maxTask;
-  private ArrayList<String> categories;
-  private Map<DayOfWeek, Day> days;
+  private final ArrayList<String> categories;
+  private final Map<DayOfWeek, Day> days;
 
 
   /**

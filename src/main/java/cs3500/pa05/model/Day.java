@@ -2,9 +2,7 @@ package cs3500.pa05.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import cs3500.pa05.view.ScheduleEventBox;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Represents a day in a schedule. Each day is associated with a specific DayOfWeek, and contains
@@ -12,8 +10,8 @@ import java.util.List;
  */
 public class Day {
 
-  private ArrayList<ScheduleEvent> events;
-  private ArrayList<ScheduleTask> tasks;
+  private final ArrayList<ScheduleEvent> events;
+  private final ArrayList<ScheduleTask> tasks;
   private final DayOfWeek day;
 
   /**
