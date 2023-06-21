@@ -9,6 +9,8 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -17,7 +19,7 @@
 <Scene xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <AnchorPane prefHeight="567.0" prefWidth="815.0">
       <children>
-         <VBox prefHeight="700.0" prefWidth="875.0">
+         <VBox prefHeight="700.0" prefWidth="875.0" style="-fx-background-color: #f1faee;">
             <children>
                <MenuBar prefWidth="875.0">
                  <menus>
@@ -51,11 +53,11 @@
                </MenuBar>
                <HBox prefHeight="700.0" prefWidth="200.0">
                   <children>
-                     <VBox fx:id="tasksBar" prefHeight="200.0" prefWidth="250.0" style="-fx-border-color: black;">
+                     <VBox fx:id="tasksBar" prefHeight="200.0" prefWidth="250.0" style="-fx-border-color: e63946;">
                         <children>
-                           <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                           <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: e63946;">
                               <children>
-                                 <Label text="Tasks">
+                                 <Label text="Tasks" textFill="#1d3557">
                                     <font>
                                        <Font size="24.0" />
                                     </font>
@@ -99,13 +101,23 @@
                                  </VBox>
                                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="293.0">
                                     <children>
-                                       <VBox alignment="CENTER">
+                                       <VBox alignment="TOP_CENTER">
                                           <children>
-                                             <Label fx:id="title" text="Name of week" textFill="#0d00ff">
+                                             <ImageView fitHeight="19.0" fitWidth="200.0">
+                                                <image>
+                                                   <Image url="@line_flourish_top.png" />
+                                                </image>
+                                             </ImageView>
+                                             <Label fx:id="title" text="Name of week" textFill="#1d3557">
                                                 <font>
-                                                   <Font size="36.0" />
+                                                   <Font name="Georgia" size="34.0" />
                                                 </font>
                                              </Label>
+                                             <ImageView fitHeight="19.0" fitWidth="200.0">
+                                                <image>
+                                                   <Image url="@line_flourish_bottom.png" />
+                                                </image>
+                                             </ImageView>
                                           </children>
                                        </VBox>
                                     </children>
@@ -141,17 +153,23 @@
                            </HBox>
                            <HBox fx:id="days" prefHeight="600.0" prefWidth="200.0">
                               <children>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
                                     <children>
                                        <VBox alignment="CENTER" prefHeight="100.0">
                                           <children>
-                                             <Label text="Sunday">
+                                             <Label text="Sunday" textFill="#457b9d">
                                                 <font>
-                                                   <Font size="18.0" />
+                                                   <Font name="Gabriola" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="sunEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label fx:id="sunTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="sunEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
+                                             <Label fx:id="sunTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
                                              <ProgressBar fx:id="sunProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
@@ -162,20 +180,26 @@
                                           </children>
                                        </VBox>
                                        <VBox fx:id="sun" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="sunCreate" alignment="CENTER" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" text="Add To Day" />
+                                       <Button fx:id="sunCreate" alignment="CENTER" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: a8dadc;" text="Add To Day" textFill="#457b9d" />
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
                                     <children>
                                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                             <Label text="Monday">
+                                             <Label text="Monday" textFill="#a8dadc">
                                                 <font>
-                                                   <Font size="18.0" />
+                                                   <Font name="Gabriola" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="monEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label fx:id="monTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="monEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
+                                             <Label fx:id="monTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
                                              <ProgressBar fx:id="monProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
@@ -186,20 +210,26 @@
                                           </children>
                                        </VBox>
                                        <VBox fx:id="mon" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="monCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" text="Add To Day" />
+                                       <Button fx:id="monCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #457b9d;" text="Add To Day" textFill="#a8dadc" />
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
                                     <children>
                                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                             <Label text="Tuesday">
+                                             <Label text="Tuesday" textFill="#457b9d">
                                                 <font>
-                                                   <Font size="18.0" />
+                                                   <Font name="Gabriola" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="tueEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label fx:id="tueTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="tueEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
+                                             <Label fx:id="tueTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
                                              <ProgressBar fx:id="tueProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
@@ -213,20 +243,26 @@
                                           <children>
                                              <VBox />
                                           </children></VBox>
-                                       <Button fx:id="tueCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" text="Add To Day" />
+                                       <Button fx:id="tueCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: a8dadc;" text="Add To Day" textFill="#457b9d" />
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
                                     <children>
                                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                             <Label text="Wednesday">
+                                             <Label text="Wednesday" textFill="#a8dadc">
                                                 <font>
-                                                   <Font size="18.0" />
+                                                   <Font name="Gabriola" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="wenEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label fx:id="wenTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="wenEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
+                                             <Label fx:id="wenTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
                                              <ProgressBar fx:id="wenProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
@@ -237,20 +273,26 @@
                                           </children>
                                        </VBox>
                                        <VBox fx:id="wen" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="wenCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" text="Add To Day" />
+                                       <Button fx:id="wenCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #457b9d;" text="Add To Day" textFill="#a8dadc" />
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
                                     <children>
                                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                             <Label text="Thursday">
+                                             <Label text="Thursday" textFill="#457b9d">
                                                 <font>
-                                                   <Font size="18.0" />
+                                                   <Font name="Gabriola" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="thuEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label fx:id="thuTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="thuEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
+                                             <Label fx:id="thuTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
                                              <ProgressBar fx:id="thuProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
@@ -261,20 +303,26 @@
                                           </children>
                                        </VBox>
                                        <VBox fx:id="thu" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="thuCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" text="Add To Day" />
+                                       <Button fx:id="thuCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: a8dadc;" text="Add To Day" textFill="#457b9d" />
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
                                     <children>
                                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                             <Label text="Friday">
+                                             <Label text="Friday" textFill="#a8dadc">
                                                 <font>
-                                                   <Font size="18.0" />
+                                                   <Font name="Gabriola" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="friEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label fx:id="friTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="friEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
+                                             <Label fx:id="friTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
                                              <ProgressBar fx:id="friProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
@@ -285,20 +333,26 @@
                                           </children>
                                        </VBox>
                                        <VBox fx:id="fri" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="friCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" text="Add To Day" />
+                                       <Button fx:id="friCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #457b9d;" text="Add To Day" textFill="#a8dadc" />
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;" HBox.hgrow="ALWAYS">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;" HBox.hgrow="ALWAYS">
                                     <children>
                                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                             <Label text="Saturday">
+                                             <Label text="Saturday" textFill="#457b9d">
                                                 <font>
-                                                   <Font size="18.0" />
+                                                   <Font name="Gabriola" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="satEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true" />
-                                             <Label fx:id="satTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true" />
+                                             <Label fx:id="satEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
+                                             <Label fx:id="satTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Century" size="12.0" />
+                                                </font></Label>
                                              <ProgressBar fx:id="satProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
@@ -309,7 +363,7 @@
                                           </children>
                                        </VBox>
                                        <VBox fx:id="sat" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="satCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" text="Add To Day" />
+                                       <Button fx:id="satCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: a8dadc;" text="Add To Day" textFill="#457b9d" />
                                     </children>
                                  </VBox>
                               </children>
