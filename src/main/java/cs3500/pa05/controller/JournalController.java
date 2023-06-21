@@ -203,10 +203,12 @@ public class JournalController implements Controller{
   }
 
   private void createNewTab() {
-    this.tabsContoller.addController(new JournalController(this.stage, this.tabsContoller));
+    this.tabsContoller.createNewTab(this.stage);
+    loadTabs();
   }
 
   private void loadTabs() {
+    tabs.getItems().clear();
     for(JournalController jc: tabsContoller.getTabs()){
       MenuItem tab = new MenuItem(jc.getWeek().getName());
       tabs.getItems().add(tab);
@@ -215,15 +217,13 @@ public class JournalController implements Controller{
   }
 
   private void switchTab(JournalController jc) {
-    JournalView jv = new JournalView(jc, "journal.fxml");
-    Scene scene = jv.load();
-    jc.run();
-    stage.setScene(scene);
+    tabsContoller.switchTab(jc, stage);
   }
 
   private void handleNameChange() {
     this.week.setName(nameBox.getText());
     title.setText(week.getName());
+    loadTabs();
   }
 
   private void switchToCreationScene(DayOfWeek dayOfWeek) {
