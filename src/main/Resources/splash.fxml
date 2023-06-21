@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Scene xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="376.0" prefWidth="404.0">
+      <children>
+         <VBox alignment="CENTER" prefHeight="379.0" prefWidth="408.0">
+            <children>
+               <Label fx:id="transition" alignment="CENTER" prefHeight="367.0" prefWidth="362.0" text="Welcome&#10;to &#10;your&#10;week" textAlignment="CENTER" textFill="#881313" textOverrun="CENTER_ELLIPSIS" VBox.vgrow="ALWAYS">
+                  <font>
+                     <Font name="Lucida Fax Italic" size="78.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+      </children></AnchorPane>
+</Scene>

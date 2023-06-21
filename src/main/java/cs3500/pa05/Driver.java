@@ -1,6 +1,7 @@
 package cs3500.pa05;
 
 import cs3500.pa05.controller.JournalController;
+import cs3500.pa05.controller.SplashContoller;
 import cs3500.pa05.controller.TabsController;
 import cs3500.pa05.view.JournalView;
 import javafx.application.Application;
@@ -24,13 +25,16 @@ public class Driver extends Application {
     JournalView journalView  = new JournalView(journalController, "journal.fxml");
 
 
+
     try {
       // load and place the view's scene onto the stage
       Scene scene = journalView.load();
       journalController.run();
       stage.setScene(scene);
       // render the stage
+      SplashContoller sc = new SplashContoller(stage, scene);
       stage.show();
+      sc.loadSplashScreen();
     } catch (IllegalStateException exc) {
       System.err.println(exc);
 
