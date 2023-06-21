@@ -140,4 +140,11 @@ public class Day {
   public void deleteTask(ScheduleTask task) {
     tasks.remove(task);
   }
+
+  /*
+  public void updateEvent(ScheduleEvent event) {
+    event
+  }
+
+   */
 }

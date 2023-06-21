@@ -99,11 +99,26 @@
                                  </VBox>
                                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="293.0">
                                     <children>
-                                       <Label fx:id="title" text="Name of week" textFill="#0d00ff">
-                                          <font>
-                                             <Font size="36.0" />
-                                          </font>
-                                       </Label>
+                                       <VBox alignment="CENTER">
+                                          <children>
+                                             <Label fx:id="title" text="Name of week" textFill="#0d00ff">
+                                                <font>
+                                                   <Font size="36.0" />
+                                                </font>
+                                             </Label>
+                                             <MenuButton fx:id="startDaySelector" mnemonicParsing="false" text="Start Day">
+                                               <items>
+                                                 <MenuItem fx:id="startDaySunday" mnemonicParsing="false" text="Sunday" />
+                                                 <MenuItem fx:id="startDayMonday" mnemonicParsing="false" text="Monday" />
+                                                   <MenuItem fx:id="startDayTuesday" mnemonicParsing="false" text="Tuesday" />
+                                                   <MenuItem fx:id="startDayWednesday" mnemonicParsing="false" text="Wednesday" />
+                                                   <MenuItem fx:id="startDayThursday" mnemonicParsing="false" text="Thursday" />
+                                                   <MenuItem fx:id="startDayFriday" mnemonicParsing="false" text="Friday" />
+                                                   <MenuItem fx:id="startDaySaturday" mnemonicParsing="false" text="Saturday" />
+                                               </items>
+                                             </MenuButton>
+                                          </children>
+                                       </VBox>
                                     </children>
                                  </HBox>
                                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="291.0">
@@ -135,7 +150,7 @@
                                     </children></HBox>
                               </children>
                            </HBox>
-                           <HBox prefHeight="600.0" prefWidth="200.0">
+                           <HBox fx:id="days" prefHeight="600.0" prefWidth="200.0">
                               <children>
                                  <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: Black;">
                                     <children>

@@ -17,6 +17,8 @@ import cs3500.pa05.view.JournalView;
 import cs3500.pa05.view.ScheduleEventBox;
 import cs3500.pa05.view.ScheduleTaskBox;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -156,6 +158,8 @@ public class JournalController implements Controller{
   private TextField maxTasksText;
   @FXML
   private Button maxTasksButton;
+  @FXML
+  private HBox days;
 
   /**
    * Constructor for the JournalController that accepts a Stage object.
@@ -306,6 +310,7 @@ public class JournalController implements Controller{
         new ScheduleEventBox(event.getName(), event.getCategory(), event.getDescription(), event.getStartTime(),
             event.getDuration());
     eventBox.setDeleteAction(e -> handleDeleteEvent(event, vbox, eventBox));
+    eventBox.setSaveAction(e -> handleSaveEvent(event, vbox, eventBox));
     vbox.getChildren().add(eventBox);
   }
 
@@ -317,6 +322,7 @@ public class JournalController implements Controller{
     tasksBar.getChildren().add(barTask);
 
     scheduleTask.setDeleteAction(e -> handleDeleteTask(task, vbox, scheduleTask, barTask));
+    scheduleTask.setSaveAction(e -> handleSaveTask(task, scheduleTask));
 
     scheduleTask.setCompleteAction(e -> toggleScheduleComplete(task, barTask));
     barTask.setCompleteAction(e -> toggleBarComplete(task, scheduleTask));
@@ -442,6 +448,46 @@ public class JournalController implements Controller{
     handleOverview();
   }
 
+  private void handleSaveEvent(ScheduleEvent event, VBox vBox, ScheduleEventBox scheduleEventBox) {
+    String newName = scheduleEventBox.getNameText();
+    String newCategory = scheduleEventBox.getCategoryText();
+    String newDescription = scheduleEventBox.getDescriptionText();
+    String newStart = scheduleEventBox.getStartTimeText();
+    String newDuration = scheduleEventBox.getDurationText();
+    if(!newName.isBlank()) {
+      event.setName(newName);
+    }
+    if(!newCategory.isBlank()) {
+      handleNewCategory(newCategory);
+      event.setCategory(newCategory);
+    }
+    if(!newDescription.isBlank()) {
+      event.setDescription(newDescription);
+    }
+    if(!newStart.isBlank()) {
+      event.setStartTime(newStart);
+    }
+    if(!newDuration.isBlank()) {
+      event.setDuration(newDuration);
+    }
+  }
+
+  private void handleSaveTask(ScheduleTask task, ScheduleTaskBox scheduleTaskBox) {
+    String newName = scheduleTaskBox.getNameText();
+    String newCategory = scheduleTaskBox.getCategoryText();
+    String newDescription = scheduleTaskBox.getDescriptionText();
+    if(!newName.isBlank()) {
+      task.setName(newName);
+    }
+    if(!newCategory.isBlank()) {
+      handleNewCategory(newCategory);
+      task.setCategory(newCategory);
+    }
+    if(!newDescription.isBlank()) {
+      task.setDescription(newDescription);
+    }
+  }
+
   private void handleDeleteTask(ScheduleTask task, VBox vbox, ScheduleTaskBox taskBox, BarTaskBox barTask) {
     for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
@@ -524,5 +570,11 @@ public class JournalController implements Controller{
    */
   public Week getWeek(){
     return this.week;
+  }
+
+  private void handleNewCategory(String category) {
+    if(!week.getCategories().contains(category)) {
+      week.addCategory(category);
+    }
   }
 }
