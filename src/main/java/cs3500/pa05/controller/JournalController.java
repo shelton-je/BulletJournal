@@ -185,7 +185,7 @@ public class JournalController implements Controller{
 
   private void handleNameChange() {
     this.week.setName(nameBox.getText());
-    loadWeek();
+    title.setText(week.getName());
   }
 
   private void switchScene(DayOfWeek dayOfWeek) {
