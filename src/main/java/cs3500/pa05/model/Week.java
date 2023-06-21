@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,8 +15,8 @@ public class Week {
   private String name;
   private int maxEvent;
   private int maxTask;
-  private ArrayList<String> categories;
-  private Map<DayOfWeek, Day> days;
+  private final ArrayList<String> categories;
+  private final Map<DayOfWeek, Day> days;
 
 
   /**

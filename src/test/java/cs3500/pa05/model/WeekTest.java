@@ -1,11 +1,5 @@
 package cs3500.pa05.model;
 
-import cs3500.pa05.model.Day;
-import cs3500.pa05.model.DayOfWeek;
-import cs3500.pa05.model.ScheduleEvent;
-import cs3500.pa05.model.ScheduleTask;
-import cs3500.pa05.model.Week;
-
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
@@ -133,5 +127,36 @@ public class WeekTest {
     week.setMaxEvent(8);
 
     assertEquals(8, week.getMaxEvents());
+  }
+
+  @Test
+  void testGetMaxEvents() {
+    assertEquals(5, week.getMaxEvents());
+  }
+
+  @Test
+  void testSetMaxEvents() {
+    week.setMaxEvent(8);
+    assertEquals(8, week.getMaxEvents());
+  }
+
+  @Test
+  void testGetMaxTasks() {
+    assertEquals(5, week.getMaxTasks());
+  }
+
+  @Test
+  void testSetMaxTasks() {
+    week.setMaxTask(7);
+    assertEquals(7, week.getMaxTasks());
+  }
+
+  @Test
+  void testSetName() {
+    assertEquals("Test Week", week.getName());
+
+    week.setName("Updated Week Name");
+
+    assertEquals("Updated Week Name", week.getName());
   }
 }

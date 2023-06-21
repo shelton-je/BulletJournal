@@ -17,10 +17,8 @@ import cs3500.pa05.view.JournalView;
 import cs3500.pa05.view.ScheduleEventBox;
 import cs3500.pa05.view.ScheduleTaskBox;
 import java.nio.file.Path;
-import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -519,6 +517,11 @@ public class JournalController implements Controller{
     }
   }
 
+  /**
+   * Get the current week the user is using
+   *
+   * @return    the week
+   */
   public Week getWeek(){
     return this.week;
   }
