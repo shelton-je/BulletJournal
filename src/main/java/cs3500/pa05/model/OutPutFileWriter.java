@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- * A class that contains the method to write to a file
+ * A class that contains the method to write to a files
  */
 public class OutPutFileWriter {
 
