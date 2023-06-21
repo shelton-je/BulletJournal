@@ -71,6 +71,11 @@ public class Day {
     return this.tasks;
   }
 
+  /**
+   * Returns the number of tasks that are marked as complete.
+   *
+   * @return the number of complete tasks
+   */
   public int numTasksComplete() {
     int numComplete = 0;
     for(ScheduleTask task : tasks) {
@@ -81,10 +86,21 @@ public class Day {
     return numComplete;
   }
 
+  /**
+   * Returns the number of tasks that are marked as incomplete.
+   *
+   * @return the number of incomplete tasks
+   */
   public int numTasksIncomplete() {
     return tasks.size() - numTasksComplete();
   }
 
+  /**
+   * Checks if the specified event is scheduled on this day.
+   *
+   * @param eventToFind the event to find
+   * @return true if the event is scheduled on this day, false otherwise
+   */
   public boolean hasEvent(ScheduleEvent eventToFind) {
     for(ScheduleEvent event : events) {
       if(event.equals(eventToFind)) {
@@ -94,10 +110,21 @@ public class Day {
     return false;
   }
 
+  /**
+   * Deletes the specified event from this day's schedule.
+   *
+   * @param event the event to delete
+   */
   public void deleteEvent(ScheduleEvent event) {
     events.remove(event);
   }
 
+/**
+ * Checks if the specified task is scheduled on this day.
+ *
+ * @param taskToFind the task to find
+ * @return true if the task is scheduled on this day
+ */
   public boolean hasTask(ScheduleTask taskToFind) {
     for(ScheduleTask task : tasks) {
       if(task.equals(taskToFind)) {
@@ -107,6 +134,11 @@ public class Day {
     return false;
   }
 
+  /**
+   * Deletes the specified task from this day's schedule.
+   *
+   * @param task the task to delete
+   */
   public void deleteTask(ScheduleTask task) {
     tasks.remove(task);
   }

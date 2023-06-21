@@ -231,6 +231,16 @@ public class JournalController implements Controller{
    * The loadWeek method displays the week's data on the view.
    */
   private void loadWeek() {
+    // Clear all VBox before loading tasks and events
+    sun.getChildren().clear();
+    mon.getChildren().clear();
+    tue.getChildren().clear();
+    wen.getChildren().clear();
+    thu.getChildren().clear();
+    fri.getChildren().clear();
+    sat.getChildren().clear();
+    tasksBar.getChildren().clear();
+
     this.title.setText(this.week.getName());
     for (Map.Entry<DayOfWeek, Day> day : week.getDays().entrySet()) {
       VBox vbox = null;

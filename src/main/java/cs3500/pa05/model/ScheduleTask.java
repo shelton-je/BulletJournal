@@ -50,6 +50,11 @@ public class ScheduleTask {
     return name;
   }
 
+  /**
+   * Gets the category of the event.
+   *
+   * @return the category of the event
+   */
   public String getCategory() {
     return category;
   }
@@ -63,6 +68,10 @@ public class ScheduleTask {
     return isComplete;
   }
 
+  /**
+   * Toggles the completion status of the event.
+   * If the event is complete, it will be marked as incomplete, and vice versa.
+   */
   public void toggleComplete() {
     isComplete = !isComplete;
   }

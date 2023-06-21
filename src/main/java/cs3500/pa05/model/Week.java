@@ -23,10 +23,11 @@ public class Week {
   /**
    * Constructs a new instance of Week with the provided parameters.
    *
-   * @param name     the name of the week
-   * @param maxEvent the maximum number of events that can be assigned in this week
-   * @param maxTask  the maximum number of tasks that can be assigned in this week
-   * @param days     a map of the days of the week and their corresponding Day objects
+   * @param name       the name of the week
+   * @param maxEvent   the maximum number of events that can be assigned in this week
+   * @param maxTask    the maximum number of tasks that can be assigned in this week
+   * @param categories the list of categories available for events
+   * @param days       a map of the days of the week and their corresponding Day objects
    */
   @JsonCreator
   public Week(@JsonProperty("name") String name, @JsonProperty("max-events") int maxEvent,
@@ -114,8 +115,8 @@ public class Week {
    * @param event     the event to be added
    */
   public void addEvent(DayOfWeek dayOfWeek, ScheduleEvent event) {
-      this.days.get(dayOfWeek).getEvents().add(event);
-    }
+    this.days.get(dayOfWeek).getEvents().add(event);
+  }
 
   /**
    * Adds the given String to the list of categories for this week
@@ -135,6 +136,11 @@ public class Week {
     return this.categories;
   }
 
+  /**
+   * Sets the name of the week.
+   *
+   * @param s the name to set for the week
+   */
   public void setName(String s) {
     this.name = s;
   }

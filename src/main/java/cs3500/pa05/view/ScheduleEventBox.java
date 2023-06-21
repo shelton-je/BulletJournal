@@ -27,6 +27,7 @@ public class ScheduleEventBox extends VBox {
    * Constructs a ScheduleEventBox object and initializes it with the provided event details.
    *
    * @param name        the name of the scheduled event
+   * @param category    the category of the scheduled event
    * @param description the description of the scheduled event
    * @param start       the start time of the scheduled event
    * @param duration    the duration of the scheduled event
