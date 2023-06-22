@@ -111,15 +111,20 @@ public class ScheduleEvent {
   }
 
   /**
+   * Set when the Event will start
    *
-   *
-   * @param startTime
+   * @param startTime Take String object of time
    */
   public void setStartTime(String startTime) {
     this.startTime = startTime;
   }
 
 
+  /**
+   * Set a duration of how long the Event will last
+   *
+   * @param duration String object of the time for duration
+   */
   public void setDuration(String duration) {
     this.duration = duration;
   }

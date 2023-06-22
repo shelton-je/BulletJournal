@@ -10,7 +10,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class SplashContoller implements Controller{
+/**
+ * Have a initial screen and password before login to the application
+ */
+public class SplashContoller implements Controller {
   private Stage stage;
   private Scene weekScene;
   private final String password = "1234";
@@ -21,22 +24,31 @@ public class SplashContoller implements Controller{
   @FXML
   private Button enter;
 
+  /**
+   * Construct a new instance of the Stage and the WeekScene
+   *
+   * @param stage     A new stage of where the scene is on
+   * @param weekScene A new Week Scene to display after the splash
+   */
   public SplashContoller(Stage stage, Scene weekScene) {
     this.stage = stage;
     this.weekScene = weekScene;
   }
 
   private void handleEnterPassword() {
-    if(userInput.getText().equals(password)) {
+    if (userInput.getText().equals(password)) {
       this.endSplashScreen();
     }
   }
 
+  /**
+   * Load the splash screen
+   */
   public void loadSplashScreen() {
-   JournalView jv = new JournalView(this, "Splash.fxml");
-   Scene scene = jv.load();
-   enter.setOnAction(e -> handleEnterPassword());
-   stage.setScene(scene);
+    JournalView jv = new JournalView(this, "Splash.fxml");
+    Scene scene = jv.load();
+    enter.setOnAction(e -> handleEnterPassword());
+    stage.setScene(scene);
     //Load splash screen with fade in effect
     FadeTransition fadeIn = new FadeTransition(Duration.seconds(3), transition);
     fadeIn.setFromValue(0);
@@ -56,6 +68,6 @@ public class SplashContoller implements Controller{
     fadeOut.setCycleCount(1);
     fadeOut.play();
 
-    fadeOut.setOnFinished(e ->  stage.setScene(weekScene));
+    fadeOut.setOnFinished(e -> stage.setScene(weekScene));
   }
 }
