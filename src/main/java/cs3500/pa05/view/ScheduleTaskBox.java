@@ -12,17 +12,17 @@ import javafx.scene.layout.VBox;
 /**
  * This class represents a user interface component for displaying a scheduled task and its details.
  * The class extends the JavaFX VBox class and is designed to be used within a JavaFX application.
- * Each ScheduleTaskBox consists of labels for the task name, category, and description. Additionally,
- * it includes a checkbox to indicate whether the task is complete and a delete button that allows
- * users to remove the task.
+ * Each ScheduleTaskBox consists of labels for the task name, category, and description.
+ * Additionally, it includes a checkbox to indicate whether the task is complete and a delete
+ * button that allows users to remove the task.
  */
 public class ScheduleTaskBox extends VBox {
   Label task = new Label("TASK");
   Button deleteButton;
-  ImageView delete_image = new ImageView(getClass().getClassLoader().getResource
-      ("delete_icon.png").toString());
-  ImageView save_image = new ImageView(getClass().getClassLoader().getResource
-      ("save_icon.png").toString());
+  ImageView deleteImage = new ImageView(getClass().getClassLoader().getResource(
+      "delete_icon.png").toString());
+  ImageView saveImage = new ImageView(getClass().getClassLoader().getResource(
+      "save_icon.png").toString());
   TextField name;
   Button saveButton;
   TextField category;
@@ -41,14 +41,14 @@ public class ScheduleTaskBox extends VBox {
     HBox title = new HBox();
     title.setAlignment(Pos.CENTER);
     deleteButton = new Button();
-    delete_image.setFitHeight(17);
-    delete_image.setFitWidth(17);
-    deleteButton.setGraphic(delete_image);
+    deleteImage.setFitHeight(17);
+    deleteImage.setFitWidth(17);
+    deleteButton.setGraphic(deleteImage);
 
     saveButton = new Button();
-    save_image.setFitHeight(17);
-    save_image.setFitWidth(17);
-    saveButton.setGraphic(save_image);
+    saveImage.setFitHeight(17);
+    saveImage.setFitWidth(17);
+    saveButton.setGraphic(saveImage);
 
     title.getChildren().addAll(this.saveButton, this.task, this.deleteButton);
 

@@ -43,6 +43,11 @@ public enum DayOfWeek {
    */
   SUNDAY;
 
+  /**
+   * Returns a string representation of this day of the week
+   *
+   * @return the string representation of the day of the week
+   */
   public String toString() {
     switch (this) {
       case SUNDAY -> {

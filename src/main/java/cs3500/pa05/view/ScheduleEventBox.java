@@ -14,10 +14,10 @@ import javafx.scene.layout.VBox;
  */
 public class ScheduleEventBox extends VBox {
   Label event = new Label("EVENT");
-  ImageView delete_image = new ImageView(getClass().getClassLoader().getResource
-      ("delete_icon.png").toString());
-  ImageView save_image = new ImageView(getClass().getClassLoader().getResource
-      ("save_icon.png").toString());
+  ImageView deleteImage = new ImageView(getClass().getClassLoader().getResource(
+      "delete_icon.png").toString());
+  ImageView saveImage = new ImageView(getClass().getClassLoader().getResource(
+      "save_icon.png").toString());
   TextField name;
   Button deleteButton;
   Button saveButton;
@@ -40,14 +40,14 @@ public class ScheduleEventBox extends VBox {
     HBox title = new HBox();
     title.setAlignment(Pos.CENTER);
     deleteButton = new Button();
-    delete_image.setFitHeight(17);
-    delete_image.setFitWidth(17);
-    deleteButton.setGraphic(delete_image);
+    deleteImage.setFitHeight(17);
+    deleteImage.setFitWidth(17);
+    deleteButton.setGraphic(deleteImage);
 
     saveButton = new Button();
-    save_image.setFitHeight(17);
-    save_image.setFitWidth(17);
-    saveButton.setGraphic(save_image);
+    saveImage.setFitHeight(17);
+    saveImage.setFitWidth(17);
+    saveButton.setGraphic(saveImage);
 
     title.getChildren().addAll(this.saveButton, this.event, this.deleteButton);
 
