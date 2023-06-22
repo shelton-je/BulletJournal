@@ -76,15 +76,29 @@ public class ScheduleTask {
     isComplete = !isComplete;
   }
 
-
+  /**
+   * Set a name for the current task
+   *
+   * @param name String object use to get the field
+   */
   public void setName(String name) {
     this.name = name;
   }
 
+  /**
+   * Set a description of what the task is about
+   *
+   * @param description String object that describe the task
+   */
   public void setDescription(String description) {
     this.description = description;
   }
 
+  /**
+   * Set a category for the current task
+   *
+   * @param category String object use to set a category
+   */
   public void setCategory(String category) {
     this.category = category;
   }
