@@ -102,7 +102,7 @@ public class ScheduleEvent {
   }
 
 
-  public void setDuration(String durtation) {
+  public void setDuration(String duration) {
     this.duration = duration;
   }
 
