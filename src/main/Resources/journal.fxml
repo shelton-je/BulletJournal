@@ -9,8 +9,6 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -21,11 +19,11 @@
       <children>
          <VBox prefHeight="700.0" prefWidth="875.0" style="-fx-background-color: #f1faee;">
             <children>
-               <MenuBar prefWidth="875.0">
+               <MenuBar prefWidth="875.0" style="-fx-background-color: #345a8b;">
                  <menus>
                    <Menu mnemonicParsing="false">
                         <graphic>
-                           <MenuButton mnemonicParsing="false" text="File">
+                           <MenuButton mnemonicParsing="false" style="-fx-background-color: #b3c5db;" text="File">
                              <items>
                                <MenuItem fx:id="openFile" mnemonicParsing="false" text="Open File" />
                                <MenuItem fx:id="saveFile" mnemonicParsing="false" text="Save to File" />
@@ -33,19 +31,25 @@
                               <graphic>
                                  <TextField fx:id="filePath" />
                               </graphic>
+                              <font>
+                                 <Font name="Monotype Corsiva" size="20.0" />
+                              </font>
                            </MenuButton>
                         </graphic>
                    </Menu>
                      <Menu mnemonicParsing="false">
                         <graphic>
-                           <MenuButton fx:id="tabs" mnemonicParsing="false" popupSide="RIGHT" prefHeight="33.0" prefWidth="82.0" text="Tabs">
+                           <MenuButton fx:id="tabs" mnemonicParsing="false" popupSide="RIGHT" prefHeight="43.0" prefWidth="111.0" style="-fx-background-color: #345a8b;" text="Tabs" textFill="WHITE">
                               <graphic>
-                                 <Button fx:id="newTab" alignment="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="18.0" text="+" textAlignment="CENTER" wrapText="true">
+                                 <Button fx:id="newTab" alignment="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="18.0" style="-fx-background-color: #b3c5db;" text="+" textAlignment="CENTER" wrapText="true">
                                     <font>
                                        <Font size="11.0" />
                                     </font>
                                  </Button>
                               </graphic>
+                              <font>
+                                 <Font name="Monotype Corsiva" size="20.0" />
+                              </font>
                            </MenuButton>
                         </graphic>
                      </Menu>
@@ -53,13 +57,13 @@
                </MenuBar>
                <HBox prefHeight="700.0" prefWidth="200.0">
                   <children>
-                     <VBox fx:id="tasksBar" prefHeight="200.0" prefWidth="250.0" style="-fx-border-color: e63946;">
+                     <VBox fx:id="tasksBar" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: #a9bcd4;">
                         <children>
-                           <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: e63946;">
+                           <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #6a8cb9;">
                               <children>
-                                 <Label text="Tasks" textFill="#1d3557">
+                                 <Label text="Tasks" textFill="WHITE">
                                     <font>
-                                       <Font size="24.0" />
+                                       <Font name="Monotype Corsiva" size="37.0" />
                                     </font>
                                  </Label>
                               </children>
@@ -68,56 +72,61 @@
                      </VBox>
                      <VBox prefHeight="670.0" prefWidth="875.0">
                         <children>
-                           <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="875.0">
+                           <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="875.0" style="-fx-background-color: #4c73a6;">
                               <children>
                                  <VBox>
                                     <children>
                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="291.0">
                                           <children>
-                                             <Label text="Week Name: " />
-                                             <TextField fx:id="nameBox" alignment="BOTTOM_CENTER" prefHeight="12.0" prefWidth="89.0" />
-                                             <Button fx:id="setNameButton" mnemonicParsing="false" prefHeight="37.0" text="Change Name" textAlignment="CENTER" wrapText="true">
+                                             <Label text="Week Name: " textFill="WHITE">
                                                 <font>
-                                                   <Font size="10.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
+                                                </font></Label>
+                                             <TextField fx:id="nameBox" alignment="BOTTOM_CENTER" prefHeight="12.0" prefWidth="89.0" />
+                                             <Button fx:id="setNameButton" mnemonicParsing="false" prefHeight="37.0" style="-fx-background-color: #b3c5db;" text="Change Name" textAlignment="CENTER" wrapText="true">
+                                                <font>
+                                                   <Font name="Monotype Corsiva" size="13.0" />
                                                 </font>
                                              </Button>
                                           </children>
                                        </HBox>
                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                             <Label text="Max Events Per Day: " />
+                                             <Label text="Max Events Per Day: " textFill="WHITE">
+                                                <font>
+                                                   <Font name="Monotype Corsiva" size="16.0" />
+                                                </font></Label>
                                              <TextField fx:id="maxEventsText" prefWidth="40.0" />
-                                             <Button fx:id="maxEventsButton" mnemonicParsing="false" text="Update" />
+                                             <Button fx:id="maxEventsButton" mnemonicParsing="false" style="-fx-background-color: #b3c5db;" text="Update">
+                                                <font>
+                                                   <Font name="Monotype Corsiva" size="13.0" />
+                                                </font></Button>
                                           </children>
                                        </HBox>
                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                           <children>
-                                             <Label text="Max Tasks Per Day: " />
+                                             <Label text="Max Tasks Per Day: " textFill="WHITE">
+                                                <font>
+                                                   <Font name="Monotype Corsiva" size="15.0" />
+                                                </font></Label>
                                              <TextField fx:id="maxTasksText" maxWidth="40.0" />
-                                             <Button fx:id="maxTasksButton" mnemonicParsing="false" text="Update" />
+                                             <Button fx:id="maxTasksButton" mnemonicParsing="false" style="-fx-background-color: #b3c5db;" text="Update">
+                                                <font>
+                                                   <Font name="Monotype Corsiva" size="13.0" />
+                                                </font></Button>
                                           </children>
                                        </HBox>
                                     </children>
                                  </VBox>
-                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="293.0">
+                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="293.0" style="-fx-background-color: #7;">
                                     <children>
                                        <VBox alignment="TOP_CENTER">
                                           <children>
-                                             <ImageView fitHeight="19.0" fitWidth="200.0">
-                                                <image>
-                                                   <Image url="@line_flourish_top.png" />
-                                                </image>
-                                             </ImageView>
-                                             <Label fx:id="title" text="Name of week" textFill="#1d3557">
+                                             <Label fx:id="title" alignment="CENTER" prefHeight="82.0" prefWidth="178.0" text="Name of Week" textAlignment="CENTER" textFill="WHITE">
                                                 <font>
-                                                   <Font name="Georgia" size="34.0" />
+                                                   <Font name="Monotype Corsiva" size="34.0" />
                                                 </font>
                                              </Label>
-                                             <ImageView fitHeight="19.0" fitWidth="200.0">
-                                                <image>
-                                                   <Image url="@line_flourish_bottom.png" />
-                                                </image>
-                                             </ImageView>
                                           </children>
                                        </VBox>
                                     </children>
@@ -126,24 +135,39 @@
                                     <children>
                                        <VBox alignment="CENTER">
                                           <children>
-                                             <Label text="Week Overview" />
+                                             <Label text="Week Overview" textFill="WHITE">
+                                                <font>
+                                                   <Font name="Monotype Corsiva" size="15.0" />
+                                                </font></Label>
                                              <HBox alignment="CENTER">
                                                 <children>
-                                                   <Label text="Total Events: " />
+                                                   <Label text="Total Events: " textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                    <Label fx:id="totalEvents" />
                                                 </children>
                                              </HBox>
                                              <HBox alignment="CENTER">
                                                 <children>
-                                                   <Label text="Total Tasks: " />
+                                                   <Label text="Total Tasks: " textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                    <Label fx:id="totalTasks" />
                                                 </children>
                                              </HBox>
                                              <HBox alignment="CENTER">
                                                 <children>
-                                                   <Label text="Task Completion: " />
+                                                   <Label text="Task Completion: " textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                    <Label fx:id="taskCompletion" />
-                                                   <Label text="\%" />
+                                                   <Label text="\%" textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                 </children>
                                              </HBox>
                                           </children>
@@ -153,217 +177,259 @@
                            </HBox>
                            <HBox fx:id="days" prefHeight="600.0" prefWidth="200.0">
                               <children>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: #7c8faa;">
                                     <children>
-                                       <VBox alignment="CENTER" prefHeight="100.0">
+                                       <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #7695bd;">
                                           <children>
-                                             <Label text="Sunday" textFill="#457b9d">
+                                             <Label text="Sunday" textFill="#01316b">
                                                 <font>
-                                                   <Font name="Gabriola" size="20.0" />
+                                                   <Font name="Monotype Corsiva" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="sunEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="sunEventWarning" text="Too many events!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
-                                             <Label fx:id="sunTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="sunTaskWarning" text="Too many tasks!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
                                              <ProgressBar fx:id="sunProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
                                                    <Label fx:id="sunRemainingTasks" />
-                                                   <Label text=" tasks remaining" />
+                                                   <Label text=" tasks remaining" textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                 </children>
                                              </HBox>
                                           </children>
                                        </VBox>
-                                       <VBox fx:id="sun" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="sunCreate" alignment="CENTER" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: a8dadc;" text="Add To Day" textFill="#457b9d" />
+                                       <VBox fx:id="sun" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dce3ec;" VBox.vgrow="ALWAYS" />
+                                       <Button fx:id="sunCreate" alignment="CENTER" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #b9c5d4;" text="Add To Day" textFill="#01316b">
+                                          <font>
+                                             <Font name="Monotype Corsiva" size="15.0" />
+                                          </font></Button>
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: #7c8faa;">
                                     <children>
-                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #7695bd;">
                                           <children>
-                                             <Label text="Monday" textFill="#a8dadc">
+                                             <Label text="Monday" textFill="#01316b">
                                                 <font>
-                                                   <Font name="Gabriola" size="20.0" />
+                                                   <Font name="Monotype Corsiva" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="monEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="monEventWarning" text="Too many events!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
-                                             <Label fx:id="monTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="monTaskWarning" text="Too many tasks!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
                                              <ProgressBar fx:id="monProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
                                                    <Label fx:id="monRemainingTasks" />
-                                                   <Label text=" tasks remaining" />
+                                                   <Label text=" tasks remaining" textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                 </children>
                                              </HBox>
                                           </children>
                                        </VBox>
-                                       <VBox fx:id="mon" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="monCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #457b9d;" text="Add To Day" textFill="#a8dadc" />
+                                       <VBox fx:id="mon" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dce3ec;" VBox.vgrow="ALWAYS" />
+                                       <Button fx:id="monCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #b9c5d4;" text="Add To Day" textFill="#01316b">
+                                          <font>
+                                             <Font name="Monotype Corsiva" size="15.0" />
+                                          </font></Button>
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: #7c8faa;">
                                     <children>
-                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #7695bd;">
                                           <children>
-                                             <Label text="Tuesday" textFill="#457b9d">
+                                             <Label text="Tuesday" textFill="#01316b">
                                                 <font>
-                                                   <Font name="Gabriola" size="20.0" />
+                                                   <Font name="Monotype Corsiva" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="tueEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="tueEventWarning" text="Too many events!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
-                                             <Label fx:id="tueTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="tueTaskWarning" text="Too many tasks!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
                                              <ProgressBar fx:id="tueProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
                                                    <Label fx:id="tueRemainingTasks" />
-                                                   <Label text=" tasks remaining" />
+                                                   <Label text=" tasks remaining" textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                 </children>
                                              </HBox>
                                           </children>
                                        </VBox>
-                                       <VBox fx:id="tue" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                                       <VBox fx:id="tue" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dce3ec;" VBox.vgrow="ALWAYS">
                                           <children>
                                              <VBox />
                                           </children></VBox>
-                                       <Button fx:id="tueCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: a8dadc;" text="Add To Day" textFill="#457b9d" />
+                                       <Button fx:id="tueCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #b9c5d4;" text="Add To Day" textFill="#01316b">
+                                          <font>
+                                             <Font name="Monotype Corsiva" size="15.0" />
+                                          </font></Button>
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: #7c8faa;">
                                     <children>
-                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #7695bd;">
                                           <children>
-                                             <Label text="Wednesday" textFill="#a8dadc">
+                                             <Label text="Wednesday" textFill="#01316b">
                                                 <font>
                                                    <Font name="Gabriola" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="wenEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="wenEventWarning" text="Too many events!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
-                                             <Label fx:id="wenTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="wenTaskWarning" text="Too many tasks!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
                                              <ProgressBar fx:id="wenProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
                                                    <Label fx:id="wenRemainingTasks" />
-                                                   <Label text=" tasks remaining" />
+                                                   <Label text=" tasks remaining" textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                 </children>
                                              </HBox>
                                           </children>
                                        </VBox>
-                                       <VBox fx:id="wen" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="wenCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #457b9d;" text="Add To Day" textFill="#a8dadc" />
+                                       <VBox fx:id="wen" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dce3ec;" VBox.vgrow="ALWAYS" />
+                                       <Button fx:id="wenCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #b9c5d4;" text="Add To Day" textFill="#01316b">
+                                          <font>
+                                             <Font name="Monotype Corsiva" size="15.0" />
+                                          </font></Button>
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: #7c8faa;">
                                     <children>
-                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #7695bd;">
                                           <children>
-                                             <Label text="Thursday" textFill="#457b9d">
+                                             <Label text="Thursday" textFill="#01316b">
                                                 <font>
-                                                   <Font name="Gabriola" size="20.0" />
+                                                   <Font name="Monotype Corsiva" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="thuEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="thuEventWarning" text="Too many events!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
-                                             <Label fx:id="thuTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="thuTaskWarning" text="Too many tasks!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
                                              <ProgressBar fx:id="thuProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
                                                    <Label fx:id="thuRemainingTasks" />
-                                                   <Label text=" tasks remaining" />
+                                                   <Label text=" tasks remaining" textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                 </children>
                                              </HBox>
                                           </children>
                                        </VBox>
-                                       <VBox fx:id="thu" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="thuCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: a8dadc;" text="Add To Day" textFill="#457b9d" />
+                                       <VBox fx:id="thu" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dce3ec;" VBox.vgrow="ALWAYS" />
+                                       <Button fx:id="thuCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #b9c5d4;" text="Add To Day" textFill="#01316b">
+                                          <font>
+                                             <Font name="Monotype Corsiva" size="15.0" />
+                                          </font></Button>
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: #7c8faa;">
                                     <children>
-                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #7695bd;">
                                           <children>
-                                             <Label text="Friday" textFill="#a8dadc">
+                                             <Label text="Friday" textFill="#01316b">
                                                 <font>
-                                                   <Font name="Gabriola" size="20.0" />
+                                                   <Font name="Monotype Corsiva" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="friEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="friEventWarning" text="Too many events!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
-                                             <Label fx:id="friTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="friTaskWarning" text="Too many tasks!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
                                              <ProgressBar fx:id="friProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
                                                    <Label fx:id="friRemainingTasks" />
-                                                   <Label text=" tasks remaining" />
+                                                   <Label text=" tasks remaining" textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                 </children>
                                              </HBox>
                                           </children>
                                        </VBox>
-                                       <VBox fx:id="fri" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="friCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #457b9d;" text="Add To Day" textFill="#a8dadc" />
+                                       <VBox fx:id="fri" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dce3ec;" VBox.vgrow="ALWAYS" />
+                                       <Button fx:id="friCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #b9c5d4;" text="Add To Day" textFill="#01316b">
+                                          <font>
+                                             <Font name="Monotype Corsiva" size="15.0" />
+                                          </font></Button>
                                     </children>
                                  </VBox>
-                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: e63946;" HBox.hgrow="ALWAYS">
+                                 <VBox prefHeight="600.0" prefWidth="125.0" style="-fx-border-color: #7c8faa;" HBox.hgrow="ALWAYS">
                                     <children>
-                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #7695bd;">
                                           <children>
-                                             <Label text="Saturday" textFill="#457b9d">
+                                             <Label text="Saturday" textFill="#01316b">
                                                 <font>
-                                                   <Font name="Gabriola" size="20.0" />
+                                                   <Font name="Monotype Corsiva" size="20.0" />
                                                 </font>
                                              </Label>
-                                             <Label fx:id="satEventWarning" text="Too many events!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="satEventWarning" text="Too many events!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
-                                             <Label fx:id="satTaskWarning" text="Too many tasks!" textAlignment="CENTER" wrapText="true">
+                                             <Label fx:id="satTaskWarning" text="Too many tasks!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                                                 <font>
-                                                   <Font name="Century" size="12.0" />
+                                                   <Font name="Monotype Corsiva" size="15.0" />
                                                 </font></Label>
                                              <ProgressBar fx:id="satProgress" progress="0.0" />
                                              <HBox alignment="CENTER">
                                                 <children>
                                                    <Label fx:id="satRemainingTasks" />
-                                                   <Label text=" tasks remaining" />
+                                                   <Label text=" tasks remaining" textFill="#fffefe">
+                                                      <font>
+                                                         <Font name="Monotype Corsiva" size="15.0" />
+                                                      </font></Label>
                                                 </children>
                                              </HBox>
                                           </children>
                                        </VBox>
-                                       <VBox fx:id="sat" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
-                                       <Button fx:id="satCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: a8dadc;" text="Add To Day" textFill="#457b9d" />
+                                       <VBox fx:id="sat" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dce3ec;" VBox.vgrow="ALWAYS" />
+                                       <Button fx:id="satCreate" mnemonicParsing="false" prefHeight="75.0" prefWidth="145.0" style="-fx-background-color: #b9c5d4;" text="Add To Day" textFill="#01316b">
+                                          <font>
+                                             <Font name="Monotype Corsiva" size="15.0" />
+                                          </font></Button>
                                     </children>
                                  </VBox>
                               </children>

@@ -37,7 +37,7 @@ public class SplashContoller implements Controller{
    Scene scene = jv.load();
    enter.setOnAction(e -> handleEnterPassword());
    stage.setScene(scene);
-
+    //Load splash screen with fade in effect
     FadeTransition fadeIn = new FadeTransition(Duration.seconds(3), transition);
     fadeIn.setFromValue(0);
     fadeIn.setToValue(1);
@@ -48,6 +48,8 @@ public class SplashContoller implements Controller{
   }
 
   private void endSplashScreen() {
+
+    //Finish splash with fade out effect
     FadeTransition fadeOut = new FadeTransition(Duration.seconds(3), transition);
     fadeOut.setFromValue(1);
     fadeOut.setToValue(0);

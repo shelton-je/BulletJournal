@@ -36,7 +36,8 @@ public class ScheduleEventBox extends VBox {
    * @param start       the start time of the scheduled event
    * @param duration    the duration of the scheduled event
    */
-  public ScheduleEventBox(String name, String category, String description, String start, String duration) {
+  public ScheduleEventBox(String name, String category, String description, String start,
+                          String duration) {
     HBox title = new HBox();
     title.setAlignment(Pos.CENTER);
     deleteButton = new Button();
@@ -56,7 +57,8 @@ public class ScheduleEventBox extends VBox {
     this.description = new TextField(description);
     this.start = new TextField(start);
     this.duration = new TextField(duration);
-    this.getChildren().addAll(title, this.name, this.category, this.description, this.start, this.duration);
+    this.getChildren()
+        .addAll(title, this.name, this.category, this.description, this.start, this.duration);
     this.setAlignment(Pos.CENTER);
     this.setStyle("-fx-border-color: black");
   }

@@ -8,56 +8,99 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <Scene xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <AnchorPane prefHeight="578.0" prefWidth="930.0">
       <children>
          <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="935.0">
             <children>
-               <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #b3c5db;" HBox.hgrow="ALWAYS">
                   <children>
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Event" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Event Name" textAlignment="CENTER" />
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #345a8b;" text="Event" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="ALWAYS">
+                        <font>
+                           <Font name="Monotype Corsiva" size="23.0" />
+                        </font></Label>
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #4c73a6;" text="Event Name" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                           <Font name="Monotype Corsiva" size="20.0" />
+                        </font></Label>
                      <TextField fx:id="eventName" prefHeight="25.0" prefWidth="470.0" />
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Category" textAlignment="CENTER" />
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #b3c5db;" text="Category" textAlignment="CENTER" textFill="#01316b">
+                        <font>
+                           <Font name="Monotype Corsiva" size="18.0" />
+                        </font></Label>
                      <VBox fx:id="eventCategoryButtons" alignment="CENTER">
                         <children>
-                           <HBox fx:id="newEventCategoryBox" alignment="CENTER">
+                           <HBox fx:id="newEventCategoryBox" alignment="CENTER" style="-fx-background-color: #b3c5db;">
                               <children>
-                                 <RadioButton fx:id="newEventCategoryButton" mnemonicParsing="false" text="New Category: " />
+                                 <RadioButton fx:id="newEventCategoryButton" mnemonicParsing="false" text="New Category: " textFill="#01316b">
+                                    <font>
+                                       <Font name="Monotype Corsiva" size="13.0" />
+                                    </font></RadioButton>
                                  <TextField fx:id="newEventCategoryText" />
                               </children>
                            </HBox>
                         </children>
                      </VBox>
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Description" textAlignment="CENTER" />
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #b3c5db;" text="Description" textAlignment="CENTER" textFill="#01316b">
+                        <font>
+                           <Font name="Monotype Corsiva" size="18.0" />
+                        </font></Label>
                      <TextField fx:id="eventDescription" prefHeight="25.0" prefWidth="470.0" />
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Start Time" textAlignment="CENTER" />
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #b3c5db;" text="Start Time" textAlignment="CENTER" textFill="#01316b">
+                        <font>
+                           <Font name="Monotype Corsiva" size="18.0" />
+                        </font></Label>
                      <TextField fx:id="eventStart" prefHeight="25.0" prefWidth="470.0" />
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Duration" textAlignment="CENTER" />
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #b3c5db;" text="Duration" textAlignment="CENTER" textFill="#01316b">
+                        <font>
+                           <Font name="Monotype Corsiva" size="18.0" />
+                        </font></Label>
                      <TextField fx:id="eventDuration" prefHeight="25.0" prefWidth="470.0" />
-                     <Button fx:id="eventCreateButton" mnemonicParsing="false" text="create" />
+                     <Button fx:id="eventCreateButton" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="839.0" style="-fx-background-color: #345a8b;" text="Create" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                           <Font name="Monotype Corsiva" size="18.0" />
+                        </font></Button>
                   </children>
                </VBox>
-               <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #b3c5db;" HBox.hgrow="ALWAYS">
                   <children>
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Task" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Task Name" textAlignment="CENTER" />
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #345a8b;" text="Task" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="ALWAYS">
+                        <font>
+                           <Font name="Monotype Corsiva" size="23.0" />
+                        </font></Label>
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #4c73a6;" text="Task Name" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                           <Font name="Monotype Corsiva" size="20.0" />
+                        </font></Label>
                      <TextField fx:id="taskName" prefHeight="25.0" prefWidth="470.0" />
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Category" textAlignment="CENTER" />
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #b3c5db;" text="Category" textAlignment="CENTER" textFill="#01316b">
+                        <font>
+                           <Font name="Monotype Corsiva" size="18.0" />
+                        </font></Label>
                      <VBox fx:id="taskCategoryButtons" alignment="CENTER">
                         <children>
-                           <HBox fx:id="newTaskCategoryBox" alignment="CENTER">
+                           <HBox fx:id="newTaskCategoryBox" alignment="CENTER" style="-fx-background-color: #b3c5db;">
                               <children>
-                                 <RadioButton fx:id="newTaskCategoryButton" mnemonicParsing="false" text="New Category: " />
+                                 <RadioButton fx:id="newTaskCategoryButton" mnemonicParsing="false" text="New Category: " textFill="#01316b">
+                                    <font>
+                                       <Font name="Monotype Corsiva" size="13.0" />
+                                    </font></RadioButton>
                                  <TextField fx:id="newTaskCategoryText" />
                               </children>
                            </HBox>
                         </children>
                      </VBox>
-                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" text="Description" textAlignment="CENTER" />
+                     <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="467.0" style="-fx-background-color: #b3c5db;" text="Description" textAlignment="CENTER" textFill="#01316b">
+                        <font>
+                           <Font name="Monotype Corsiva" size="18.0" />
+                        </font></Label>
                      <TextField fx:id="taskDescription" prefHeight="25.0" prefWidth="470.0" />
-                     <Button fx:id="taskCreateButton" mnemonicParsing="false" text="create" />
+                     <Button fx:id="taskCreateButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="546.0" style="-fx-background-color: #345a8b;" text="Create" textFill="WHITE">
+                        <font>
+                           <Font name="Monotype Corsiva" size="18.0" />
+                        </font></Button>
                   </children>
                </VBox>
             </children>

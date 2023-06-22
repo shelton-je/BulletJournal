@@ -61,8 +61,8 @@ public class CreationMenuController implements Controller {
   /**
    * Constructor for CreationMenuController.
    *
-   * @param day the DayOfWeek object representing the day for which the event or task is created.
-   * @param week the Week object that the events and tasks are added to.
+   * @param day   the DayOfWeek object representing the day for which the event or task is created.
+   * @param week  the Week object that the events and tasks are added to.
    * @param stage the Stage object where the scenes are displayed.
    */
   CreationMenuController(DayOfWeek day, Week week, Stage stage, TabsController tc) {
@@ -112,11 +112,12 @@ public class CreationMenuController implements Controller {
     if (taskName.getText().equals("")) {
       return;
     }
-    if(newTaskCategoryButton.isSelected()) {
+    if (newTaskCategoryButton.isSelected()) {
       category = newTaskCategoryText.getText();
       week.addCategory(category);
     }
-    ScheduleTask task = new ScheduleTask(taskName.getText(), category, taskDescription.getText(), false);
+    ScheduleTask task =
+        new ScheduleTask(taskName.getText(), category, taskDescription.getText(), false);
     week.addTask(day, task);
     switchScene();
   }
@@ -136,11 +137,11 @@ public class CreationMenuController implements Controller {
    * Creates the category buttons for the specified parent VBox using the categories in the week.
    *
    * @param parent the VBox where the category buttons are added.
-   * @param week the Week object that the categories are retrieved from.
+   * @param week   the Week object that the categories are retrieved from.
    */
   private void createCategoryButtons(VBox parent, Week week) {
     ArrayList<String> categories = week.getCategories();
-    for(String category: categories) {
+    for (String category : categories) {
 
       RadioButton categoryButton = new RadioButton(category);
       categoryButton.setOnAction(e -> handleCategorySelection(category, parent));
@@ -171,17 +172,16 @@ public class CreationMenuController implements Controller {
    * Handles the selection of a category.
    *
    * @param categorySelected the selected category.
-   * @param categoryButtons the VBox containing the category buttons.
+   * @param categoryButtons  the VBox containing the category buttons.
    */
   private void handleCategorySelection(String categorySelected, VBox categoryButtons) {
     category = categorySelected;
-    for(Node node : categoryButtons.getChildren()) {
-      if(node instanceof RadioButton) {
+    for (Node node : categoryButtons.getChildren()) {
+      if (node instanceof RadioButton) {
         RadioButton categoryButton = ((RadioButton) node);
-        if(!categoryButton.getText().equals(categorySelected)) {
+        if (!categoryButton.getText().equals(categorySelected)) {
           categoryButton.setSelected(false);
-        }
-        else {
+        } else {
           categoryButton.setSelected(true);
         }
       }
@@ -200,8 +200,8 @@ public class CreationMenuController implements Controller {
    */
   private void handleNewCategorySelection(VBox categoryButtons, TextField newCategoryText) {
     category = newCategoryText.getText();
-    for(Node node : categoryButtons.getChildren()) {
-      if(node instanceof RadioButton) {
+    for (Node node : categoryButtons.getChildren()) {
+      if (node instanceof RadioButton) {
         RadioButton categoryButton = ((RadioButton) node);
         categoryButton.setSelected(false);
       }

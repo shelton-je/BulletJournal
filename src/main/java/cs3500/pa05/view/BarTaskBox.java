@@ -17,7 +17,7 @@ public class BarTaskBox extends HBox {
   /**
    * Constructs a ScheduleTaskBox object and initializes it with the provided task details.
    *
-   * @param name        the name of the scheduled task
+   * @param name the name of the scheduled task
    */
   public BarTaskBox(String name) {
     this.name = new Label(name);

@@ -17,16 +17,16 @@ public class Day {
   /**
    * Constructs a Day object with the specified DayOfWeek, list of events, and list of tasks.
    *
-   * @param day the day of the week this Day represents
+   * @param day    the day of the week this Day represents
    * @param events the events scheduled on this day
-   * @param tasks the tasks scheduled on this day
+   * @param tasks  the tasks scheduled on this day
    */
   @JsonCreator
   public Day(
       @JsonProperty("day") DayOfWeek day,
       @JsonProperty("events") ArrayList<ScheduleEvent> events,
       @JsonProperty("tasks") ArrayList<ScheduleTask> tasks
-      ) {
+  ) {
     this.day = day;
     this.events = events;
     this.tasks = tasks;
@@ -76,8 +76,8 @@ public class Day {
    */
   public int numTasksComplete() {
     int numComplete = 0;
-    for(ScheduleTask task : tasks) {
-      if(task.isComplete()) {
+    for (ScheduleTask task : tasks) {
+      if (task.isComplete()) {
         numComplete += 1;
       }
     }
@@ -100,8 +100,8 @@ public class Day {
    * @return true if the event is scheduled on this day, false otherwise
    */
   public boolean hasEvent(ScheduleEvent eventToFind) {
-    for(ScheduleEvent event : events) {
-      if(event.equals(eventToFind)) {
+    for (ScheduleEvent event : events) {
+      if (event.equals(eventToFind)) {
         return true;
       }
     }
@@ -117,15 +117,15 @@ public class Day {
     events.remove(event);
   }
 
-/**
- * Checks if the specified task is scheduled on this day.
- *
- * @param taskToFind the task to find
- * @return true if the task is scheduled on this day
- */
+  /**
+   * Checks if the specified task is scheduled on this day.
+   *
+   * @param taskToFind the task to find
+   * @return true if the task is scheduled on this day
+   */
   public boolean hasTask(ScheduleTask taskToFind) {
-    for(ScheduleTask task : tasks) {
-      if(task.equals(taskToFind)) {
+    for (ScheduleTask task : tasks) {
+      if (task.equals(taskToFind)) {
         return true;
       }
     }

@@ -22,8 +22,7 @@ public class Driver extends Application {
     TabsController tc = new TabsController();
     JournalController journalController = new JournalController(stage, tc);
     tc.addController(journalController);
-    JournalView journalView  = new JournalView(journalController, "journal.fxml");
-
+    JournalView journalView = new JournalView(journalController, "journal.fxml");
 
 
     try {
@@ -40,12 +39,13 @@ public class Driver extends Application {
 
     }
   }
+
   /**
    * Entry point for java Journal
    *
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-   launch();
+    launch();
   }
 }

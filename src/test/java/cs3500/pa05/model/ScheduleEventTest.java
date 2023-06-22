@@ -10,7 +10,8 @@ class ScheduleEventTest {
 
   @BeforeEach
   void setUp() {
-    event = new ScheduleEvent("Test event", "Test category", "Test description", "10:00", "2 hours");
+    event =
+        new ScheduleEvent("Test event", "Test category", "Test description", "10:00", "2 hours");
   }
 
   @Test
