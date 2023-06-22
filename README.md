@@ -3,6 +3,30 @@
 
 [PA Write Up](https://markefontenot.notion.site/PA-05-8263d28a81a7473d8372c6579abd6481)
 
+## Project Write Up
+Welcome to our Bullet Journal Week Application 
+in this app you will be able to create weeks and save them to a .bujo file and load them on the fly
+you can create events and tasks and track and edit them on the fly. You can also open multiple 
+weeks/.bujo files seamlessly to track multiple weeks at one time.
+
+## Solid Princlple Write Up
+
+# S
+For Single Responsibility we made each class with that in mind whether in the model for carrying data or the controller
+to handle user interaction and the viewer for handling loading JavaFX and create JavaFx containers to display.
+# O 
+For the Open-Closed Principle we made are classes so that when / if we want to expand on this you can easily extend a 
+controller if you want to though the risk of coding yourself in a corner is possible but with our controller
+interface if you want to make a controller that the view will take and load just have your class implement it
+# L
+as above if you extend any of the classes everything will still work as you would either implement the correct interface
+and any method calls will still be provided or required by the parent class
+# I
+With interface segregation in mind you can easily have a class s=ie a controller implement multiple interface if you 
+want to extend this application as long as it implements the controller interface it will work with the view.
+# D
+in line with O and I because of this our current layout promotes the fact that you need to dependency inject if you 
+want to expand either through composition or aggregation which inherently promotes dependency inversion
 
 ## Running the Application
 

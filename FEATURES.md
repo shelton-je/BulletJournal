@@ -13,10 +13,13 @@
 - Progress Bar
 - Takesie-Backsies
 - Weekly Overview
-## Section 3: Power Ups
 
 
 ## Section 4: Quality of Life
-
+- Mind Changes
+- Week Tabs
 
 ## Section 5: Extra Credit
+- Visual Flourish
+- Splash Screen
+- Privacy Lock
