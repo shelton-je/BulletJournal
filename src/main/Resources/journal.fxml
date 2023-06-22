@@ -122,7 +122,7 @@
                                     <children>
                                        <VBox alignment="TOP_CENTER">
                                           <children>
-                                             <Label fx:id="title" alignment="CENTER" prefHeight="82.0" prefWidth="178.0" text="Name of Week" textAlignment="CENTER" textFill="WHITE">
+                                             <Label fx:id="title" alignment="CENTER" prefHeight="80.0" prefWidth="224.0" text="Name of Week" textAlignment="CENTER" textFill="WHITE">
                                                 <font>
                                                    <Font name="Monotype Corsiva" size="34.0" />
                                                 </font>

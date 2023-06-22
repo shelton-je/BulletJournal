@@ -11,7 +11,7 @@ public class OutPutFileWriter {
 
   /**
    * this method will write a string to an output file
-   *
+   *q
    * @param filePath the file name to write the contents to
    * @param contents a String that will be the contents to write in the files
    */
