@@ -112,14 +112,29 @@ public class ScheduleTaskBox extends VBox {
     this.saveButton.setOnAction(value);
   }
 
+  /**
+   * returns name text
+   *
+   * @return the name text
+   */
   public String getNameText() {
     return this.name.getText();
   }
 
+  /**
+   * return category text
+   *
+   * @return category text
+   */
   public String getCategoryText() {
     return this.category.getText();
   }
 
+  /**
+   * return description text
+   *
+   * @return the description text
+   */
   public String getDescriptionText() {
     return this.description.getText();
   }

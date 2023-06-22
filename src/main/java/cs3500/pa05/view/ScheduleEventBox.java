@@ -82,22 +82,47 @@ public class ScheduleEventBox extends VBox {
     this.saveButton.setOnAction(value);
   }
 
+  /**
+   * returns the name in the text box
+   *
+   * @return the name as a string
+   */
   public String getNameText() {
     return this.name.getText();
   }
 
+  /**
+   * gets the category text
+   *
+   * @return category text
+   */
   public String getCategoryText() {
     return this.category.getText();
   }
 
+  /**
+   * returns the description text
+   *
+   * @return returns the description text
+   */
   public String getDescriptionText() {
     return this.description.getText();
   }
 
+  /**
+   * return the text of the start time
+   *
+   * @return returns start time text
+   */
   public String getStartTimeText() {
     return this.start.getText();
   }
 
+  /**
+   * returns the duration text
+   *
+   * @return duration text
+   */
   public String getDurationText() {
     return this.duration.getText();
   }

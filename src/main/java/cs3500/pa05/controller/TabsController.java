@@ -32,6 +32,11 @@ public class TabsController {
     this.controllers.add(jc);
   }
 
+  /**
+   * creates a new tab with a controller
+   *
+   * @param s the stage to give the controller
+   */
   public void createNewTab(Stage s) {
     this.controllers.add(new JournalController(s, this));
   }

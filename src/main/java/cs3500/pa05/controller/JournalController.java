@@ -160,6 +160,8 @@ public class JournalController implements Controller {
    * Constructor for the JournalController that accepts a Stage object.
    *
    * @param stage the Stage object used to change the scene in JavaFX application.
+   *
+   * @param tc the tabs controller object used to change the tabs in JavaFX application.
    */
   public JournalController(Stage stage, TabsController tc) {
     this.stage = stage;
@@ -171,6 +173,7 @@ public class JournalController implements Controller {
    *
    * @param stage the Stage object used to change the scene in JavaFX application.
    * @param week  the Week object representing the data for the week in the journal.
+   * @param tc the tabs controller object used to change the tabs in JavaFX application.
    */
   public JournalController(Stage stage, Week week, TabsController tc) {
     this(stage, tc);
