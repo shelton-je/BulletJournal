@@ -60,6 +60,7 @@ class ScheduleEventTest {
 
     assertEquals("6:00", event.getStartTime());
   }
+
   @Test
   void setDurationTest() {
     event.setDuration("3 hours");
