@@ -22,7 +22,7 @@ interface if you want to make a controller that the view will take and load just
 as above if you extend any of the classes everything will still work as you would either implement the correct interface
 and any method calls will still be provided or required by the parent class
 # I
-With interface segregation in mind you can easily have a class s=ie a controller implement multiple interface if you 
+With interface segregation in mind you can easily have a class IE. a controller implement multiple interfaces if you 
 want to extend this application as long as it implements the controller interface it will work with the view.
 # D
 in line with O and I because of this our current layout promotes the fact that you need to dependency inject if you 
