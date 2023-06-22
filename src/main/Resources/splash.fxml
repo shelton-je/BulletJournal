@@ -11,16 +11,22 @@
 <Scene xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <AnchorPane prefHeight="376.0" prefWidth="404.0">
       <children>
-         <VBox alignment="CENTER" prefHeight="379.0" prefWidth="408.0">
+         <VBox alignment="CENTER" prefHeight="379.0" prefWidth="408.0" style="-fx-background-color: #01316b;">
             <children>
-               <Label text="Password" textFill="#700f0f" />
-               <TextField fx:id="userInput" prefHeight="33.0" prefWidth="408.0" />
-               <Button fx:id="enter" mnemonicParsing="false" prefHeight="16.0" prefWidth="52.0" text="Enter" />
-               <Label fx:id="transition" alignment="CENTER" prefHeight="340.0" prefWidth="362.0" text="Welcome&#10;to &#10;your&#10;week" textAlignment="CENTER" textFill="#881313" textOverrun="CENTER_ELLIPSIS" VBox.vgrow="ALWAYS">
+               <Label fx:id="transition" alignment="CENTER" prefHeight="340.0" prefWidth="362.0" text="Welcome to &#10;Your Week" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" VBox.vgrow="ALWAYS">
                   <font>
-                     <Font name="Lucida Fax Italic" size="64.0" />
+                     <Font name="Monotype Corsiva" size="64.0" />
                   </font>
                </Label>
+               <Label text="Password" textFill="WHITE">
+                  <font>
+                     <Font name="Monotype Corsiva" size="30.0" />
+                  </font></Label>
+               <TextField fx:id="userInput" prefHeight="33.0" prefWidth="408.0" />
+               <Button fx:id="enter" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #01316b;" text="Enter" textFill="WHITE">
+                  <font>
+                     <Font name="Monotype Corsiva" size="20.0" />
+                  </font></Button>
             </children>
          </VBox>
       </children></AnchorPane>

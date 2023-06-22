@@ -31,6 +31,7 @@ public class TabsController {
   public void addController(JournalController jc) {
     this.controllers.add(jc);
   }
+
   public void createNewTab(Stage s) {
     this.controllers.add(new JournalController(s, this));
   }

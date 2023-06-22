@@ -36,7 +36,7 @@ public class ReadBujo {
     }
     StringBuilder sb = new StringBuilder();
 
-    while(sc.hasNextLine()){
+    while (sc.hasNextLine()) {
       sb.append(sc.nextLine());
     }
     return sb.toString();

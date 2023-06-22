@@ -27,6 +27,7 @@ public class JournalView {
 
     this.loader.setController(jc);
   }
+
   /**
    * Loads a scene for the journal application from an FXML file.
    *

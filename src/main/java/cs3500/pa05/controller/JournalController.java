@@ -158,7 +158,6 @@ public class JournalController implements Controller{
   private TextField maxTasksText;
   @FXML
   private Button maxTasksButton;
-
   /**
    * Constructor for the JournalController that accepts a Stage object.
    *

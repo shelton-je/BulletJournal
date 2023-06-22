@@ -23,7 +23,8 @@ class OutPutFileWriterTest {
 
   @AfterEach
   void tearDown() throws IOException {
-    if (!filePath.equals("C:\\Users\\namvi\\OneDrive\\Documents\\CS3500\\pa05-badesign\\src\\note.sr")) {
+    if (!filePath.equals(
+        "C:\\Users\\namvi\\OneDrive\\Documents\\CS3500\\pa05-badesign\\src\\note.sr")) {
       Path theFile = Path.of(filePath);
       if (Files.exists(theFile)) {
         Files.delete(theFile);
@@ -57,6 +58,7 @@ class OutPutFileWriterTest {
 
   @Test
   void writeToFileIOException() {
-    assertThrows(java.lang.RuntimeException.class, () -> OutPutFileWriter.writeToFile("/", contents));
+    assertThrows(java.lang.RuntimeException.class,
+        () -> OutPutFileWriter.writeToFile("/", contents));
   }
 }

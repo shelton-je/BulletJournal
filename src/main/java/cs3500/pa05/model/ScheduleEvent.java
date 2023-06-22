@@ -91,13 +91,16 @@ public class ScheduleEvent {
     this.description = description;
   }
 
+
   public void setCategory(String category) {
     this.category = category;
   }
 
+
   public void setStartTime(String startTime) {
     this.startTime = startTime;
   }
+
 
   public void setDuration(String durtation) {
     this.duration = duration;

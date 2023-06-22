@@ -8,36 +8,64 @@ package cs3500.pa05.model;
  */
 public enum DayOfWeek {
 
-  /** Represents Monday. */
+  /**
+   * Represents Monday.
+   */
   MONDAY,
 
-  /** Represents Tuesday. */
+  /**
+   * Represents Tuesday.
+   */
   TUESDAY,
 
-  /** Represents Wednesday. */
+  /**
+   * Represents Wednesday.
+   */
   WEDNESDAY,
 
-  /** Represents Thursday. */
+  /**
+   * Represents Thursday.
+   */
   THURSDAY,
 
-  /** Represents Friday. */
+  /**
+   * Represents Friday.
+   */
   FRIDAY,
 
-  /** Represents Saturday. */
+  /**
+   * Represents Saturday.
+   */
   SATURDAY,
 
-  /** Represents Sunday. */
+  /**
+   * Represents Sunday.
+   */
   SUNDAY;
 
   public String toString() {
-    switch(this) {
-      case SUNDAY -> { return "Sunday"; }
-      case MONDAY -> { return "Monday"; }
-      case TUESDAY -> { return "Tuesday"; }
-      case WEDNESDAY -> { return "Wednesday"; }
-      case THURSDAY -> { return "Thursday"; }
-      case FRIDAY -> { return "Friday"; }
-      default -> { return "Saturday"; }
+    switch (this) {
+      case SUNDAY -> {
+        return "Sunday";
+      }
+      case MONDAY -> {
+        return "Monday";
+      }
+      case TUESDAY -> {
+        return "Tuesday";
+      }
+      case WEDNESDAY -> {
+        return "Wednesday";
+      }
+      case THURSDAY -> {
+        return "Thursday";
+      }
+      case FRIDAY -> {
+        return "Friday";
+      }
+      default -> {
+        return "Saturday";
+      }
     }
   }
 }

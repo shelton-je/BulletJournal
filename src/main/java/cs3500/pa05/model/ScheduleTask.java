@@ -23,9 +23,9 @@ public class ScheduleTask {
    */
   @JsonCreator
   public ScheduleTask(@JsonProperty("name") String name,
-                       @JsonProperty("category") String category,
-                       @JsonProperty("description") String description,
-                       @JsonProperty("complete") boolean isComplete) {
+                      @JsonProperty("category") String category,
+                      @JsonProperty("description") String description,
+                      @JsonProperty("complete") boolean isComplete) {
     this.name = name;
     this.description = description;
     this.category = category;
@@ -75,6 +75,7 @@ public class ScheduleTask {
   public void toggleComplete() {
     isComplete = !isComplete;
   }
+
 
   public void setName(String name) {
     this.name = name;
