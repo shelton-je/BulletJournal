@@ -41,9 +41,9 @@ public class Week {
   }
 
   /**
-   * Constructs a default instance of Week, with the name as an empty string, maximum tasks and events
-   * set to 5, and days as a populated map with the seven days of the week each associated with a new Day
-   * instance with empty tasks and events.
+   * Constructs a default instance of Week, with the name as an empty string, maximum tasks
+   * and events set to 5, and days as a populated map with the seven days of the week each
+   * associated with a new Day instance with empty tasks and events.
    */
   public Week() {
     this.name = "";

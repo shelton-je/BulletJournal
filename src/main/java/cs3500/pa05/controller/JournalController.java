@@ -17,8 +17,6 @@ import cs3500.pa05.view.JournalView;
 import cs3500.pa05.view.ScheduleEventBox;
 import cs3500.pa05.view.ScheduleTaskBox;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -28,7 +26,6 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -37,9 +34,9 @@ import javafx.stage.Stage;
  * user interactions and updating the model and view accordingly. Specifically, it manages
  * the behavior of a journal that contains a week's worth of tasks and events.
  */
-public class JournalController implements Controller{
+public class JournalController implements Controller {
   private final Stage stage;
-  private  TabsController tabsContoller;
+  private TabsController tabsContoller;
   Week week = new Week();
 
   @FXML
@@ -158,6 +155,7 @@ public class JournalController implements Controller{
   private TextField maxTasksText;
   @FXML
   private Button maxTasksButton;
+
   /**
    * Constructor for the JournalController that accepts a Stage object.
    *
@@ -172,7 +170,7 @@ public class JournalController implements Controller{
    * Constructor for the JournalController that accepts a Stage and a Week object.
    *
    * @param stage the Stage object used to change the scene in JavaFX application.
-   * @param week the Week object representing the data for the week in the journal.
+   * @param week  the Week object representing the data for the week in the journal.
    */
   public JournalController(Stage stage, Week week, TabsController tc) {
     this(stage, tc);
@@ -208,7 +206,7 @@ public class JournalController implements Controller{
 
   private void loadTabs() {
     tabs.getItems().clear();
-    for(JournalController jc: tabsContoller.getTabs()){
+    for (JournalController jc : tabsContoller.getTabs()) {
       MenuItem tab = new MenuItem(jc.getWeek().getName());
       tabs.getItems().add(tab);
       tab.setOnAction(e -> switchTab(jc));
@@ -226,7 +224,8 @@ public class JournalController implements Controller{
   }
 
   private void switchToCreationScene(DayOfWeek dayOfWeek) {
-    CreationMenuController menuController = new CreationMenuController(dayOfWeek, week, stage, tabsContoller);
+    CreationMenuController menuController =
+        new CreationMenuController(dayOfWeek, week, stage, tabsContoller);
     JournalView jv = new JournalView(menuController, "creation.fxml");
     Scene scene = jv.load();
     menuController.run();
@@ -304,7 +303,8 @@ public class JournalController implements Controller{
 
   private void createEventBox(ScheduleEvent event, VBox vbox) {
     ScheduleEventBox eventBox =
-        new ScheduleEventBox(event.getName(), event.getCategory(), event.getDescription(), event.getStartTime(),
+        new ScheduleEventBox(event.getName(), event.getCategory(), event.getDescription(),
+            event.getStartTime(),
             event.getDuration());
     eventBox.setDeleteAction(e -> handleDeleteEvent(event, vbox, eventBox));
     eventBox.setSaveAction(e -> handleSaveEvent(event, vbox, eventBox));
@@ -312,7 +312,8 @@ public class JournalController implements Controller{
   }
 
   private void createTaskBoxes(ScheduleTask task, VBox vbox) {
-    ScheduleTaskBox scheduleTask = new ScheduleTaskBox(task.getName(), task.getCategory(), task.getDescription());
+    ScheduleTaskBox scheduleTask =
+        new ScheduleTaskBox(task.getName(), task.getCategory(), task.getDescription());
     vbox.getChildren().add(scheduleTask);
 
     BarTaskBox barTask = new BarTaskBox(task.getName(), task.isComplete());
@@ -326,7 +327,7 @@ public class JournalController implements Controller{
   }
 
   private void handleWarnings(Day day) {
-    switch(day.getDay()) {
+    switch (day.getDay()) {
       case SUNDAY -> {
         handleEventWarning(day, this.sunEventWarning);
         handleTaskWarning(day, this.sunTaskWarning);
@@ -359,7 +360,7 @@ public class JournalController implements Controller{
   }
 
   public void handleAllWarnings() {
-    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+    for (Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
 
       handleWarnings(day);
@@ -391,16 +392,15 @@ public class JournalController implements Controller{
   }
 
   private void handleProgresses() {
-    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+    for (Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
 
       double numTasksComplete = day.numTasksComplete();
       double totalTasks = day.getTasks().size();
       double progress;
-      if(numTasksComplete == 0) {
+      if (numTasksComplete == 0) {
         progress = 0.0;
-      }
-      else {
+      } else {
         progress = numTasksComplete / totalTasks;
       }
       ProgressBar progressBar = chooseProgressBar(entry.getKey());
@@ -409,34 +409,62 @@ public class JournalController implements Controller{
   }
 
   private ProgressBar chooseProgressBar(DayOfWeek dayOfWeek) {
-    switch(dayOfWeek) {
-      case SUNDAY -> { return sunProgress; }
-      case MONDAY -> { return monProgress; }
-      case TUESDAY -> { return tueProgress; }
-      case WEDNESDAY -> { return wenProgress; }
-      case THURSDAY -> { return thuProgress; }
-      case FRIDAY -> { return friProgress; }
-      default -> { return satProgress; }
+    switch (dayOfWeek) {
+      case SUNDAY -> {
+        return sunProgress;
+      }
+      case MONDAY -> {
+        return monProgress;
+      }
+      case TUESDAY -> {
+        return tueProgress;
+      }
+      case WEDNESDAY -> {
+        return wenProgress;
+      }
+      case THURSDAY -> {
+        return thuProgress;
+      }
+      case FRIDAY -> {
+        return friProgress;
+      }
+      default -> {
+        return satProgress;
+      }
     }
   }
 
   private Label chooseRemainingTasksLabel(DayOfWeek dayOfWeek) {
-    switch(dayOfWeek) {
-      case SUNDAY -> { return sunRemainingTasks; }
-      case MONDAY -> { return monRemainingTasks; }
-      case TUESDAY -> { return tueRemainingTasks; }
-      case WEDNESDAY -> { return wenRemainingTasks; }
-      case THURSDAY -> { return thuRemainingTasks; }
-      case FRIDAY -> { return friRemainingTasks; }
-      default -> { return satRemainingTasks; }
+    switch (dayOfWeek) {
+      case SUNDAY -> {
+        return sunRemainingTasks;
+      }
+      case MONDAY -> {
+        return monRemainingTasks;
+      }
+      case TUESDAY -> {
+        return tueRemainingTasks;
+      }
+      case WEDNESDAY -> {
+        return wenRemainingTasks;
+      }
+      case THURSDAY -> {
+        return thuRemainingTasks;
+      }
+      case FRIDAY -> {
+        return friRemainingTasks;
+      }
+      default -> {
+        return satRemainingTasks;
+      }
     }
   }
 
   private void handleDeleteEvent(ScheduleEvent event, VBox vbox, ScheduleEventBox eventBox) {
-    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+    for (Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
 
-      if(day.hasEvent(event)) {
+      if (day.hasEvent(event)) {
         day.deleteEvent(event);
         handleWarnings(day);
       }
@@ -451,20 +479,20 @@ public class JournalController implements Controller{
     String newDescription = scheduleEventBox.getDescriptionText();
     String newStart = scheduleEventBox.getStartTimeText();
     String newDuration = scheduleEventBox.getDurationText();
-    if(!newName.isBlank()) {
+    if (!newName.isBlank()) {
       event.setName(newName);
     }
-    if(!newCategory.isBlank()) {
+    if (!newCategory.isBlank()) {
       handleNewCategory(newCategory);
       event.setCategory(newCategory);
     }
-    if(!newDescription.isBlank()) {
+    if (!newDescription.isBlank()) {
       event.setDescription(newDescription);
     }
-    if(!newStart.isBlank()) {
+    if (!newStart.isBlank()) {
       event.setStartTime(newStart);
     }
-    if(!newDuration.isBlank()) {
+    if (!newDuration.isBlank()) {
       event.setDuration(newDuration);
     }
   }
@@ -473,23 +501,24 @@ public class JournalController implements Controller{
     String newName = scheduleTaskBox.getNameText();
     String newCategory = scheduleTaskBox.getCategoryText();
     String newDescription = scheduleTaskBox.getDescriptionText();
-    if(!newName.isBlank()) {
+    if (!newName.isBlank()) {
       task.setName(newName);
     }
-    if(!newCategory.isBlank()) {
+    if (!newCategory.isBlank()) {
       handleNewCategory(newCategory);
       task.setCategory(newCategory);
     }
-    if(!newDescription.isBlank()) {
+    if (!newDescription.isBlank()) {
       task.setDescription(newDescription);
     }
   }
 
-  private void handleDeleteTask(ScheduleTask task, VBox vbox, ScheduleTaskBox taskBox, BarTaskBox barTask) {
-    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+  private void handleDeleteTask(ScheduleTask task, VBox vbox, ScheduleTaskBox taskBox,
+                                BarTaskBox barTask) {
+    for (Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
 
-      if(day.hasTask(task)) {
+      if (day.hasTask(task)) {
         day.deleteTask(task);
         handleWarnings(day);
       }
@@ -502,7 +531,7 @@ public class JournalController implements Controller{
   }
 
   private void handleRemainingTasks() {
-    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+    for (Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
 
       Label dayRemainingTasks = chooseRemainingTasksLabel(entry.getKey());
@@ -515,7 +544,7 @@ public class JournalController implements Controller{
     int totalEvents = 0;
     double totalTasks = 0;
     double tasksCompleted = 0;
-    for(Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
+    for (Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
 
       totalEvents += day.getEvents().size();
@@ -524,10 +553,9 @@ public class JournalController implements Controller{
     }
 
     double taskCompletionPercentage;
-    if(totalTasks == 0) {
+    if (totalTasks == 0) {
       taskCompletionPercentage = 0;
-    }
-    else {
+    } else {
       taskCompletionPercentage = (tasksCompleted / totalTasks) * 100;
     }
 
@@ -563,14 +591,14 @@ public class JournalController implements Controller{
   /**
    * Get the current week the user is using
    *
-   * @return    the week
+   * @return the week
    */
-  public Week getWeek(){
+  public Week getWeek() {
     return this.week;
   }
 
   private void handleNewCategory(String category) {
-    if(!week.getCategories().contains(category)) {
+    if (!week.getCategories().contains(category)) {
       week.addCategory(category);
     }
   }
