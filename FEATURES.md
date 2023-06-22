@@ -20,6 +20,7 @@
 - Week Tabs
 
 ## Section 5: Extra Credit
+- tried to make a jar for so long
 - Visual Flourish
 - Splash Screen
 - Privacy Lock
