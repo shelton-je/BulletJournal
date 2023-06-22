@@ -36,6 +36,12 @@ public class TabsController {
     this.controllers.add(new JournalController(s, this));
   }
 
+  /**
+   * switch to a different tab
+   *
+   * @param jc the controller to switch too
+   * @param s the stage top display on
+   */
   public void switchTab(JournalController jc, Stage s) {
     JournalView jv = new JournalView(jc, "journal.fxml");
     Scene scene = jv.load();

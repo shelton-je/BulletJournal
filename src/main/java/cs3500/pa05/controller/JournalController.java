@@ -244,7 +244,8 @@ public class JournalController implements Controller {
       JsonNode jsonNode = mapper.readTree(jsonString);
       weekRecord = mapper.convertValue(jsonNode, WeekRecord.class);
     } catch (JsonProcessingException e) {
-
+      // do nothing
+      return;
     }
     this.week = weekRecord.getWeek();
     loadWeek();
@@ -260,6 +261,7 @@ public class JournalController implements Controller {
       OutPutFileWriter.writeToFile(filePath.getText(), mapper.writeValueAsString(weekRecord));
     } catch (JsonProcessingException e) {
 
+      // do nothing
     }
   }
 
@@ -473,7 +475,7 @@ public class JournalController implements Controller {
     handleOverview();
   }
 
-  private void handleSaveEvent(ScheduleEvent event, VBox vBox, ScheduleEventBox scheduleEventBox) {
+  private void handleSaveEvent(ScheduleEvent event, VBox vbox, ScheduleEventBox scheduleEventBox) {
     String newName = scheduleEventBox.getNameText();
     if (!newName.isBlank()) {
       event.setName(newName);

@@ -13,16 +13,16 @@ import javafx.scene.layout.VBox;
  * This class represents a user interface component for displaying a scheduled task and its details.
  * The class extends the JavaFX VBox class and is designed to be used within a JavaFX application.
  * Each ScheduleTaskBox consists of labels for the task name, category, and description.
- * Additionally, it includes a checkbox to indicate whether the task is complete and a delete
- * button that allows users to remove the task.
+ * Additionally, it includes a checkbox to indicate whether the task is complete
+ * and a delete button that allows users to remove the task.
  */
 public class ScheduleTaskBox extends VBox {
   Label task = new Label("TASK");
   Button deleteButton;
-  ImageView deleteImage = new ImageView(getClass().getClassLoader().getResource(
-      "delete_icon.png").toString());
-  ImageView saveImage = new ImageView(getClass().getClassLoader().getResource(
-      "save_icon.png").toString());
+  ImageView deleteImage = new ImageView(getClass().getClassLoader()
+      .getResource("delete_icon.png").toString());
+  ImageView saveImage = new ImageView(getClass().getClassLoader()
+      .getResource("save_icon.png").toString());
   TextField name;
   Button saveButton;
   TextField category;

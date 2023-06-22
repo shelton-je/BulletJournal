@@ -90,8 +90,8 @@ public class CreationMenuController implements Controller {
    * Handles the creation of a new event. The event is added to the week.
    */
   private void handleEventCreation() {
-    if (eventName.getText().equals("") || eventStart.getText().equals("") ||
-        eventDuration.getText().equals("")) {
+    if (eventName.getText().equals("") || eventStart.getText().equals("")
+        || eventDuration.getText().equals("")) {
       return;
     }
     if (newEventCategoryButton.isSelected()) {
