@@ -1,14 +1,17 @@
 package cs3500.pa05.model;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 class OutPutFileWriterTest {
 
@@ -24,7 +27,7 @@ class OutPutFileWriterTest {
   @AfterEach
   void tearDown() throws IOException {
     if (!filePath.equals(
-        "C:\\Users\\namvi\\OneDrive\\Documents\\CS3500\\pa05-badesign\\src\\note.sr")) {
+        "CS3500\\pa05-badesign\\src\\note.sr")) {
       Path theFile = Path.of(filePath);
       if (Files.exists(theFile)) {
         Files.delete(theFile);
@@ -40,24 +43,12 @@ class OutPutFileWriterTest {
     assertTrue(Files.exists(theFile));
 
     String readContents = Files.readString(theFile);
+
     assertEquals(contents, readContents);
   }
 
   @Test
-  void writeToFileWhenFileAlreadyExists() throws IOException {
-    filePath = "C:\\Users\\namvi\\OneDrive\\Documents\\CS3500\\pa05-badesign\\src\\note.sr";
-
-    OutPutFileWriter.writeToFile(filePath, contents);
-
-    Path theFile = Path.of(filePath);
-    assertTrue(Files.exists(theFile));
-
-    String readContents = Files.readString(theFile);
-    assertEquals(contents, readContents);
-  }
-
-  @Test
-  void writeToFileIOException() {
+  void writeToFileIoException() {
     assertThrows(java.lang.RuntimeException.class,
         () -> OutPutFileWriter.writeToFile("/", contents));
   }

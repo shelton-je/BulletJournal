@@ -1,18 +1,18 @@
 package cs3500.pa05.model;
 
-import org.junit.jupiter.api.Test;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import org.junit.jupiter.api.Test;
+
 
 class ReadBujoTest {
 
 
   @Test
-  void readBulletJournalWCategoriesBujo() throws IOException {
+  void readBulletJournalwCategoriesBujo() throws IOException {
     Path filePath = Path.of("src/main/Resources/BulletTest.bujo");
     String expectedContent =
         "{\"week\":{\"name\":\"\",\"categories\":[],\"days\":{\"WEDNESDAY\":{\"day\""
