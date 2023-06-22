@@ -287,7 +287,7 @@ public class JournalController implements Controller {
         case WEDNESDAY -> vbox = this.wen;
         case THURSDAY -> vbox = this.thu;
         case FRIDAY -> vbox = this.fri;
-        case SATURDAY -> vbox = this.sat;
+        default -> vbox = this.sat;
       }
       for (ScheduleEvent e : day.getValue().getEvents()) {
         createEventBox(e, vbox);
@@ -352,14 +352,14 @@ public class JournalController implements Controller {
         handleEventWarning(day, this.friEventWarning);
         handleTaskWarning(day, this.friTaskWarning);
       }
-      case SATURDAY -> {
+      default -> {
         handleEventWarning(day, this.satEventWarning);
         handleTaskWarning(day, this.satTaskWarning);
       }
     }
   }
 
-  public void handleAllWarnings() {
+  private void handleAllWarnings() {
     for (Map.Entry<DayOfWeek, Day> entry : week.getDays().entrySet()) {
       Day day = entry.getValue();
 
@@ -475,23 +475,27 @@ public class JournalController implements Controller {
 
   private void handleSaveEvent(ScheduleEvent event, VBox vBox, ScheduleEventBox scheduleEventBox) {
     String newName = scheduleEventBox.getNameText();
-    String newCategory = scheduleEventBox.getCategoryText();
-    String newDescription = scheduleEventBox.getDescriptionText();
-    String newStart = scheduleEventBox.getStartTimeText();
-    String newDuration = scheduleEventBox.getDurationText();
     if (!newName.isBlank()) {
       event.setName(newName);
     }
+
+    String newCategory = scheduleEventBox.getCategoryText();
     if (!newCategory.isBlank()) {
       handleNewCategory(newCategory);
       event.setCategory(newCategory);
     }
+
+    String newDescription = scheduleEventBox.getDescriptionText();
     if (!newDescription.isBlank()) {
       event.setDescription(newDescription);
     }
+
+    String newStart = scheduleEventBox.getStartTimeText();
     if (!newStart.isBlank()) {
       event.setStartTime(newStart);
     }
+
+    String newDuration = scheduleEventBox.getDurationText();
     if (!newDuration.isBlank()) {
       event.setDuration(newDuration);
     }
@@ -572,7 +576,7 @@ public class JournalController implements Controller {
       week.setMaxEvent(newMax);
       handleAllWarnings();
     } catch (NumberFormatException e) {
-
+      return;
     }
   }
 
@@ -584,7 +588,7 @@ public class JournalController implements Controller {
       week.setMaxTask(newMax);
       handleAllWarnings();
     } catch (NumberFormatException e) {
-
+      return;
     }
   }
 
